@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ProductCatalog>
+
+<ConsoleCatalog>
+    <console id="Blink Doorbell">
+        <name>Blink Doorbell</name>
+        <price>69.97</price>
+        <image>blinkdoorbell.jpeg</image>
+        <description>Black smart Doorbell</description>
+        <manufacturer>Blink</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>2</productQuantity>
+        <accessories>
+            <accessory>xboxone_wc</accessory>
+            <accessory>xboxone_sh</accessory>
+			<accessory>xboxone_kg</accessory>
+            <accessory>xboxone_vb</accessory>
+			<accessory>xboxone_rs</accessory>
+            <accessory>xboxone_mp</accessory>
+			<accessory>xboxone_mc</accessory>
+        </accessories>
+    </console>
+    <console id="Blink Doorbell White">
+        <name>Blink Doorbell White</name>
+        <price>74.99</price>
+        <image>blinkdoorbell2.jpeg</image>
+        <description>White smart doorbell</description>
+        <manufacturer>Blink</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>3</productQuantity>
+        <accessories>
+            <accessory>xbox360_wc</accessory>
+            <accessory>xbox360_sh</accessory>
+			<accessory>xbox360_vb</accessory>
+			<accessory>xbox360_rs</accessory>
+			<accessory>xbox360_mp</accessory>
+			<accessory>xbox360_kg</accessory>
+        </accessories>
+    </console>
+
+    <console id="Eufy Doorbell">
+        <name>Eufy Doorbell</name>
+        <price>65</price>
+        <image>eufydoorbell.jpeg</image>
+        <description>Black smart Doorbell</description>
+        <manufacturer>Eufy</manufacturer>
+        <condition>New</condition>
+        <discount>0.0</discount>
+        <productOnSale>NO</productOnSale>
+        <productQuantity>5</productQuantity>
+        <accessories>
+            <accessory>ps4_wc</accessory>
+			
+        </accessories>
+    </console>
+    <console id="Eufy Doorbell White">
+        <name>Eufy Doorbell White</name>
+        <price>70</price>
+        <image>eufydoorbell2.jpeg</image>
+        <description>White smart doorbell</description>
+        <manufacturer>Eufy</manufacturer>
+        <condition>New</condition>
+        <discount>0.0</discount>
+        <productOnSale>NO</productOnSale>
+        <productQuantity>10</productQuantity>
+        <accessories>
+            <accessory>ps3_wc</accessory>
+			
+        </accessories>
+    </console>
+    <console id="Ring Doorbell">
+        <name>Ring Doorbell</name>
+        <price>89.99</price>
+        <image>ringdoorbell.png</image>
+        <description>Smart doorbell</description>
+        <manufacturer>Ring</manufacturer>
+        <condition>New</condition>
+        <discount>0.0</discount>
+        <productOnSale>NO</productOnSale>
+        <productQuantity>15</productQuantity>
+        <accessories>
+            <accessory>nintendo_wc</accessory>
+            <accessory>nintendo_sh</accessory>
+        </accessories>
+    </console>
+</ConsoleCatalog>
+
+<TabletCatalog>
+    <tablet id="Alexa Speaker">
+        <name>Alexa Speaker</name>
+        <price>119.99</price>
+        <image>alexaspeaker.jpeg</image>
+        <description>Alexa Smart Speaker</description>
+        <manufacturer>Alexa</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+    </tablet>
+    <tablet id="Alexa Speaker Mini">
+        <name>Alexa Speaker Mini</name>
+        <price>54.97</price>
+        <image>alexaspeakermini.jpeg</image>
+        <description>Alexa Mini Smart Speaker</description>
+        <manufacturer>Alexa</manufacturer>
+        <condition>Used</condition>
+        <discount>20.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>4</productQuantity>
+    </tablet>
+    <tablet id="EchoDot Speaker">
+        <name>EchoDot Speaker</name>
+        <price>75.49</price>
+        <image>echodotspeaker.jpeg</image>
+        <description>EchoDot White Smart Speaker</description>
+        <manufacturer>EchoDot</manufacturer>
+        <condition>New</condition>
+        <discount>0.0</discount>
+        <productOnSale>NO</productOnSale>
+        <productQuantity>15</productQuantity>
+    </tablet>
+    <tablet id="EchoDot Speaker Black">
+        <name>EchoDot Speaker Black</name>
+        <price>199.99</price>
+        <image>echodotspeaker2.jpeg</image>
+        <description>EchoDot Black Smart Speaker</description>
+        <manufacturer>EchoDot</manufacturer>
+        <condition>New</condition>
+        <discount>0.0</discount>
+        <productOnSale>NO</productOnSale>
+        <productQuantity>20</productQuantity>
+    </tablet>
+    <tablet id="Google Speaker">
+        <name>Google Speaker</name>
+        <price>50.99</price>
+        <image>googlespeaker.jpeg</image>
+        <description>Google White Smart Speaker</description>
+        <manufacturer>Google</manufacturer>
+        <condition>New</condition>
+        <discount>0.0</discount>
+        <productOnSale>NO</productOnSale>
+        <productQuantity>7</productQuantity>
+    </tablet>
+
+</TabletCatalog>
+<GamesCatalog>
+    <game id="Elemake Doorlock">
+        <name>Elemake Doorlock</name>
+        <price>50.99</price>
+        <image>elemakedoorlock.jpeg</image>
+        <description>Black smart Doorlock</description>
+        <manufacturer>Elemake</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>2</productQuantity>
+    </game>
+    <game id="Elemake Doorlock Advanced">
+        <name>Elemake Doorlock Advanced</name>
+        <price>60.99</price>
+        <image>elemakedoorlock2.jpeg</image>
+        <description>Black Advanced smart Doorlock</description>
+        <manufacturer>Elemake</manufacturer>
+        <condition>Refurbished</condition>
+        <discount>20.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>10</productQuantity>
+    </game>
+    <game id="Kwikset Doorlock">
+        <name>Kwikset Doorlock</name>
+        <price>50.99</price>
+        <image>kwiksetdoorlock.png</image>
+        <description>White smart Doorlock</description>
+        <manufacturer>Kwikset</manufacturer>
+        <condition>New</condition>
+        <discount>0.0</discount>
+        <productOnSale>NO</productOnSale>
+        <productQuantity>8</productQuantity>
+    </game>
+    <game id="Kwikset Doorlock Black">
+        <name>Kwikset Doorlock Black</name>
+        <price>50.99</price>
+        <image>kwiksetdoorlock2.jpeg</image>
+        <description>Black smart Doorlock</description>
+        <manufacturer>Kwikset</manufacturer>
+        <condition>New</condition>
+        <discount>0.0</discount>
+        <productOnSale>NO</productOnSale>
+        <productQuantity>9</productQuantity>
+    </game>
+    <game id="Wyze Doorlock">
+        <name>Wyze Doorlock</name>
+        <price>50.99</price>
+        <image>wyzedoorlock.jpeg</image>
+        <description>Black smart Doorlock</description>
+        <manufacturer>Wyze</manufacturer>
+        <condition>New</condition>
+        <discount>0.0</discount>
+        <productOnSale>NO</productOnSale>
+        <productQuantity>5</productQuantity>
+    </game>
+</GamesCatalog>
+
+<LightningCatalog>
+    <lightning id="Lifx Lightning">
+        <name>Lifx Lightning</name>
+        <price>69.97</price>
+        <image>lifxlight.jpeg</image>
+        <description>Lifx Smart light</description>
+        <manufacturer>Lifx</manufacturer>
+        <condition>New</condition>
+        <discount>0.0</discount>
+        <productOnSale>NO</productOnSale>
+        <productQuantity>25</productQuantity>
+    </lightning>
+    <lightning id="Tapo Lightning">
+        <name>Tapo Lightning</name>
+        <price>74.99</price>
+        <image>tapolight.jpeg</image>
+        <description>Tapo Smart light</description>
+        <manufacturer>Tapo</manufacturer>
+        <condition>New</condition>
+        <discount>0.0</discount>
+        <productOnSale>NO</productOnSale>
+        <productQuantity>12</productQuantity>
+    </lightning>
+
+    <lightning id="Tapo Lightning Set of Two">
+        <name>Tapo Lightning Set of Two</name>
+        <price>65</price>
+        <image>tapolight2.jpeg</image>
+        <description>Tapo Smart light 2 set</description>
+        <manufacturer>Tapo</manufacturer>
+        <condition>New</condition>
+        <discount>0.0</discount>
+        <productOnSale>NO</productOnSale>
+        <productQuantity>13</productQuantity>
+    </lightning>
+    <lightning id="Wipro Lightning">
+        <name>Wipro Lightning</name>
+        <price>70</price>
+        <image>wiprolight.jpeg</image>
+        <description>Wipro Smart light</description>
+        <manufacturer>Wipro</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>15</productQuantity>
+    </lightning>
+    <lightning id="Wipro Lightning set of Three">
+        <name>Wipro Lightning set of Three</name>
+        <price>89.99</price>
+        <image>wiprolight2.jpeg</image>
+        <description>Wipro Smart light three set</description>
+        <manufacturer>Wipro</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>10</productQuantity>
+    </lightning>
+</LightningCatalog>
+
+<ThermostatCatalog>
+    <thermostat id="Amazon Thermostat">
+        <name>Amazon Thermostat</name>
+        <price>50.99</price>
+        <image>amazonthermostat.jpeg</image>
+        <description>Amazon Smart Thermostat</description>
+        <manufacturer>Amazon</manufacturer>
+        <condition>New</condition>
+        <discount>0.0</discount>
+        <productOnSale>NO</productOnSale>
+        <productQuantity>8</productQuantity>
+    </thermostat>
+    <thermostat id="Ecobee Thermostat">
+        <name>Ecobee Thermostat</name>
+        <price>60.99</price>
+        <image>ecobeethermostat.jpeg</image>
+        <description>Ecobee White Smart Thermostat</description>
+        <manufacturer>Ecobee</manufacturer>
+        <condition>Refurbished</condition>
+        <discount>0.0</discount>
+        <productOnSale>NO</productOnSale>
+        <productQuantity>10</productQuantity>
+    </thermostat>
+    <thermostat id="Ecobee Thermostat Black">
+        <name>Ecobee Thermostat Black</name>
+        <price>50.99</price>
+        <image>ecobeethermostat2.jpeg</image>
+        <description>Ecobee Black Smart Thermostat</description>
+        <manufacturer>Ecobee</manufacturer>
+        <condition>New</condition>
+        <discount>0.0</discount>
+        <productOnSale>NO</productOnSale>
+        <productQuantity>15</productQuantity>
+    </thermostat>
+    <thermostat id="Google Thermostat">
+        <name>Google Thermostat</name>
+        <price>50.99</price>
+        <image>googlethermostat.jpeg</image>
+        <description>Google Black Smart Thermostat</description>
+        <manufacturer>Google</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>17</productQuantity>
+    </thermostat>
+    <thermostat id="Google Thermostat White">
+        <name>Google Thermostat White</name>
+        <price>50.99</price>
+        <image>googlethermostat2.jpeg</image>
+        <description>Google White Smart Thermostat</description>
+        <manufacturer>Google</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>30</productQuantity>
+    </thermostat>
+</ThermostatCatalog>
+
+<StoreCatalog>
+    <store id="Best Buy">
+        <name>Best Buy</name>
+        <street>12 East Street</street>
+        <city>Chicago</city>
+        <state>IL</state>
+        <zip>60616</zip>
+    </store>
+    <store id="Tech Mart">
+        <name>Tech Mart</name>
+        <street>73 Wabash Avenue</street>
+        <city>San Francisco</city>
+        <state>CA</state>
+        <zip>37812</zip>
+    </store>
+    <store id="Zays Electronics">
+        <name>Zays Electronics</name>
+        <street>51 Lincon Park</street>
+        <city>Phoenix</city>
+        <state>AZ</state>
+        <zip>46738</zip>
+    </store>
+    <store id="Micro Center">
+        <name>Micro Center</name>
+        <street>11 West Street</street>
+        <city>Topeka</city>
+        <state>KS</state>
+        <zip>80898</zip>
+    </store>
+    <store id="Apple Michigan Avenue">
+        <name>Apple Michigan Avenue</name>
+        <street>401 Michigan Avenue</street>
+        <city>Dekalb</city>
+        <state>TX</state>
+        <zip>89480</zip>
+    </store>
+    <store id="Walmart Connection Center">
+        <name>Walmart Connection Center</name>
+        <street>83 Devon Avenue</street>
+        <city>Miami</city>
+        <state>FL</state>
+        <zip>26734</zip>
+    </store>
+    <store id="Smart Wireless">
+        <name>Smart Wireless</name>
+        <street>95 Martin Road</street>
+        <city>Orlando</city>
+        <state>CO</state>
+        <zip>78490</zip>
+    </store>
+    <store id="Gadgets Store">
+        <name>Gadgets Store</name>
+        <street>57 West Michigan Avenue</street>
+        <city>Tulsa</city>
+        <state>OK</state>
+        <zip>88790</zip>
+    </store>
+    <store id="Royal Home Entertainment">
+        <name>Royal Home Entertainment</name>
+        <street>46 Edwards</street>
+        <city>Jackson</city>
+        <state>MS</state>
+        <zip>13253</zip>
+    </store>
+    <store id="Decibel Audio">
+        <name>Decibel Audio</name>
+        <street>99 Brain Street </street>
+        <city>Dayton</city>
+        <state>OH</state>
+        <zip>70717</zip>
+    </store>
+</StoreCatalog>
+
+<AccessoryCatalog>
+
+    <accessory id="xboxone_wc">
+        <name>Controller</name>
+        <price>89.99</price>
+        <image>XBOX controller.jpg</image>
+        <manufacturer>Blink</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+     </accessory>
+
+    <accessory id="xboxone_sh">
+        <name>Turtle Beach Headset</name>
+        <price>89.99</price>
+        <image>Turtle Beach Headset.jpg</image>
+        <manufacturer>Blink</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+     </accessory>
+	 
+	 <accessory id="xboxone_vb">
+        <name>joystick</name>
+        <price>89.99</price>
+        <image>joystick.jpg</image>
+        <manufacturer>Blink</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+     </accessory>
+
+    <accessory id="xboxone_kg">
+        <name>Keypad</name>
+        <price>89.99</price>
+        <image>keypad.jpg</image>
+        <manufacturer>Blink</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+     </accessory>
+	 
+	 <accessory id="xboxone_rs">
+        <name>Starterkit</name>
+        <price>89.99</price>
+        <image>starterkit.jpeg</image>
+        <manufacturer>Blink</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+     </accessory>
+
+    <accessory id="xboxone_mp">
+        <name>Wireless adpter</name>
+        <price>89.99</price>
+        <image>wirelessadapter.jpg</image>
+        <manufacturer>Blink</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+     </accessory>
+	 
+	 <accessory id="xboxone_mc">
+        <name>Wireless </name>
+        <price>89.99</price>
+        <image>wirelessadapter.jpg</image>
+        <manufacturer>Blink</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+     </accessory>
+	 
+
+    <accessory id="xbox360_wc">
+        <name>XBOX Speeding Wheel</name>
+        <price>89.99</price>
+        <image>XBOX360-SpeedWheel.jpg</image>
+        <manufacturer>Blink</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+     </accessory>
+
+    <accessory id="xbox360_sh">
+        <name>XBOX Wireless Adapter</name>
+        <price>89.99</price>
+        <image>xbox360_wa.png</image>
+        <manufacturer>Blink</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+     </accessory>
+	 
+	 <accessory id="xbox360_vb">
+        <name>Remote</name>
+        <price>89.99</price>
+        <image>remote.jpg</image>
+        <manufacturer>Blink</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+     </accessory>
+	 	 <accessory id="xbox360_rs">
+        <name>messengerkit</name>
+        <price>89.99</price>
+        <image>messengerkit.jpg</image>
+        <manufacturer>Blink</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+     </accessory>
+	 
+	 	 <accessory id="xbox360_mp">
+        <name>Steering</name>
+        <price>89.99</price>
+        <image>steering.jpg</image>
+        <manufacturer>Blink</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+     </accessory>
+	 
+	 	 <accessory id="xbox360_kg">
+        <name>Charger</name>
+        <price>89.99</price>
+        <image>charger.jpg</image>
+        <manufacturer>Blink</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+     </accessory>
+
+    <accessory id="ps4_wc">
+        <name>PS Controller</name>
+        <price>89.99</price>
+        <image>XBOX controller.jpg</image>
+        <manufacturer>Eufy</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+     </accessory>
+
+    <accessory id="ps3_wc">
+        <name>PS Gaming HeadPhones</name>
+        <price>89.99</price>
+        <image>Turtle Beach Headset.jpg</image>
+        <manufacturer>Eufy</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+     </accessory>
+
+    <accessory id="nintendo_wc">
+        <name>Nintendo Controller</name>
+        <price>89.99</price>
+        <image>Wii1.jpg</image>
+        <manufacturer>Ring</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+     </accessory>
+
+    <accessory id="nintendo_sh">
+        <name>Nintendo Racing Controller</name>
+        <price>89.99</price>
+        <image>Wii2.jpg</image>
+        <manufacturer>Ring</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+        <productOnSale>YES</productOnSale>
+        <productQuantity>5</productQuantity>
+     </accessory>
+	 
+  
+
+</AccessoryCatalog>
+
+
+
+
+
+
+</ProductCatalog>
