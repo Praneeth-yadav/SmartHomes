@@ -41,7 +41,7 @@ public class Registration extends HttpServlet {
 
 		//if password and repassword does not match show error message
 
-		if(!password.equals(repassword))
+		if(!password.equalsIgnoreCase(repassword))
 		{
 			error_msg = "Passwords doesn't match!";
 		}
@@ -53,7 +53,7 @@ public class Registration extends HttpServlet {
 
 			String message=MySqlDataStoreUtilities.getConnection();
 
-			if(message.equals("Successfull"))
+			if(message.equalsIgnoreCase("Successfull"))
 			{
 				hm=MySqlDataStoreUtilities.selectUser();
 

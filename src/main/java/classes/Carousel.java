@@ -36,6 +36,8 @@ public class Carousel{
 			name = "";
 			}catch(Exception e)
 			{
+				System.out.println("Exception carouselfeature"+e);
+
 				
 			}
 			

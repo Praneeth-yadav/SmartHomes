@@ -57,13 +57,13 @@ public class Payment extends HttpServlet {
 		c.add(Calendar.DATE, 5);
 		Date cancel = c.getTime();
 		String cancelDate = formatter.format(cancel);
-		if(session.getAttribute("usertype").equals("retailer")){
+		if(((String) session.getAttribute("usertype")).equalsIgnoreCase("retailer")){
 			Customername =request.getParameter("customername");
 			try{
 				HashMap<String,User> hm=new HashMap<>();
 				hm=MySqlDataStoreUtilities.selectUser();
 				if(hm.containsKey(Customername)){
-					if(hm.get(Customername).getUsertype().equals("customer")){
+					if(hm.get(Customername).getUsertype().equalsIgnoreCase("customer")){
 						msg ="good";
 					}else {msg ="bad";}
 
@@ -71,6 +71,8 @@ public class Payment extends HttpServlet {
 
 			}catch(Exception e)
 			{
+				System.out.println("Exception payment dopost"+e);
+
 
 			}
 		}
@@ -85,9 +87,9 @@ public class Payment extends HttpServlet {
 		pw.print("</h2><div class='entry'>");
 
 		String message=MySqlDataStoreUtilities.getConnection();
-		if(message.equals("Successfull"))
+		if(message.equalsIgnoreCase("Successfull"))
 		{
-			if (msg.equals("good"))
+			if (msg.equalsIgnoreCase("good"))
 			{
 				int orderId=utility.getOrderPaymentSize()+1;
 				//iterate through each order

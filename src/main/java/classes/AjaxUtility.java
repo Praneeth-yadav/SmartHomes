@@ -32,6 +32,8 @@ public class AjaxUtility {
 		}
 		catch(Exception e)
 		{
+			System.out.println("Exception Ajax getConnection"+e);
+
 			 message="unsuccessful";
 		     return message;
 		}
@@ -80,6 +82,8 @@ public class AjaxUtility {
 		}
 		catch(Exception e)
 		{
+			System.out.println("Exception Ajax getData"+e);
+
 			e.printStackTrace();
 		}
 		return hm;
@@ -111,6 +115,7 @@ public class AjaxUtility {
 		}
 		catch(Exception e)
 		{
+			System.out.println("Exception Ajax storeData"+e);
 
 		}
 	}

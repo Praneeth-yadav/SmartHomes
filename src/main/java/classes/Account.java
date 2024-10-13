@@ -64,6 +64,8 @@ public class Account extends HttpServlet {
 			}
 			catch(Exception e)
 			{
+				System.out.println("Exception orderPayments "+e);
+
 
 			}
 		    int size=0;
@@ -76,7 +78,7 @@ public class Account extends HttpServlet {
 
 				for(OrderPayment od:entry.getValue())
 				{
-					if(od.getUserName().equals(user.getName())) {
+					if(od.getUserName().equalsIgnoreCase(user.getName())) {
 						size= size+1;
 					}
 				}
@@ -95,7 +97,7 @@ public class Account extends HttpServlet {
 				for(Map.Entry<Integer, ArrayList<OrderPayment>> entry : orderPayments.entrySet())
 				{
 					for(OrderPayment oi:entry.getValue()) {
-						if(oi.getUserName().equals(user.getName()))
+						if(oi.getUserName().equalsIgnoreCase(user.getName()))
 						{
 						pw.print("<tr>");
 						pw.print("<td><input type='radio' name='orderName' value='"+oi.getOrderName()+"'></td>");
@@ -120,6 +122,8 @@ public class Account extends HttpServlet {
 		}
 		catch(Exception e)
 		{
+			System.out.println("Exception displayAccount "+e);
+
 		}
 	}
 }

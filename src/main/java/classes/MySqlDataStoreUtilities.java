@@ -29,6 +29,8 @@ public class MySqlDataStoreUtilities
 		}
 		catch(Exception e)
 		{
+			System.out.println("Exception MySqlDataStoreUtilities connection"+e);
+
 			message=e.getMessage();
 			return message;
 		}
@@ -202,6 +204,8 @@ public class MySqlDataStoreUtilities
 			
 		}catch(Exception e)
 		{
+			System.out.println("Exception MySqlDataStoreUtilities Insertproducts"+e);
+
 			e.printStackTrace();
 		}
 	} 
@@ -242,6 +246,8 @@ public class MySqlDataStoreUtilities
 				}					
 			}catch(Exception e)
 			{
+				System.out.println("Exception MySqlDataStoreUtilities getConsoles"+e);
+
 				e.printStackTrace();
 			}
 		}
@@ -273,6 +279,8 @@ public static HashMap<String,Tablet> getTablets()
 }
 catch(Exception e)
 {
+	System.out.println("Exception MySqlDataStoreUtilities getTablets"+e);
+
 }
 return hm;			
 }
@@ -297,6 +305,8 @@ public static HashMap<String,Game> getGames()
 }
 catch(Exception e)
 {
+	System.out.println("Exception MySqlDataStoreUtilities getGames"+e);
+
 }
 return hm;			
 }
@@ -321,6 +331,8 @@ public static HashMap<String,Lightning> getLightnings()
 }
 catch(Exception e)
 {
+	System.out.println("Exception MySqlDataStoreUtilities getLightnings"+e);
+
 }
 return hm;			
 }
@@ -345,6 +357,8 @@ public static HashMap<String,Thermostat> getThermostats()
 }
 catch(Exception e)
 {
+	System.out.println("Exception MySqlDataStoreUtilities getThermostats"+e);
+
 }
 return hm;			
 }
@@ -370,6 +384,8 @@ public static HashMap<String,Accessory> getAccessories()
 }
 catch(Exception e)
 {
+	System.out.println("Exception MySqlDataStoreUtilities getAccessories"+e);
+
 }
 return hm;			
 }
@@ -395,6 +411,8 @@ public static HashMap<String,Store> getStoreLocations()
 	}
 	catch(Exception e)
 	{
+		System.out.println("Exception MySqlDataStoreUtilities getStoreLocations"+e);
+
 	}
 	return hm;			
 }
@@ -431,6 +449,8 @@ public static void Insertstores(){
 			}
 	catch(Exception e)
 		{
+		System.out.println("Exception MySqlDataStoreUtilities Insertstores"+e);
+
 			e.printStackTrace();
 		}
 	}
@@ -472,6 +492,8 @@ public static String addproducts(String producttype,String productId,String prod
 			}
 		}catch(Exception e)
 		{
+			System.out.println("Exception MySqlDataStoreUtilities addproducts1"+e);
+
 			msg = "Erro while adding the product";
 			e.printStackTrace();
 			
@@ -482,6 +504,8 @@ public static String addproducts(String producttype,String productId,String prod
 	}
 	catch(Exception e)
 	{
+		System.out.println("Exception MySqlDataStoreUtilities addproducts2"+e);
+
 		msg = "Erro while adding the product";
 		e.printStackTrace();
 		
@@ -516,6 +540,8 @@ public static String updateproducts(String producttype,String productId,String p
 	}
 	catch(Exception e)
 	{
+		System.out.println("Exception MySqlDataStoreUtilities updateproducts"+e);
+
 		msg = "Product cannot be updated";
 		e.printStackTrace();
 		
@@ -543,6 +569,8 @@ public static HashMap<String,Inventory> getDailyTransactions()
 	}
 	catch(Exception e)
 	{
+		System.out.println("Exception MySqlDataStoreUtilities getDailyTransactions"+e);
+
 	}
 	return hm;
 }
@@ -566,6 +594,8 @@ public static HashMap<String,Inventory> getSoldProducts()
 	}
 	catch(Exception e)
 	{
+		System.out.println("Exception MySqlDataStoreUtilities getSoldProducts"+e);
+
 	}
 	return hm;
 }
@@ -589,6 +619,8 @@ public static HashMap<String,Inventory> getAllProducts()
 	}
 	catch(Exception e)
 	{
+		System.out.println("Exception MySqlDataStoreUtilities getAllProducts"+e);
+
 	}
 	return hm;
 }
@@ -612,6 +644,8 @@ public static HashMap<String,Inventory> getOnRebateProducts()
 	}
 	catch(Exception e)
 	{
+		System.out.println("Exception MySqlDataStoreUtilities getOnRebateProducts"+e);
+
 	}
 	return hm;
 }
@@ -635,6 +669,8 @@ public static HashMap<String,Inventory> getOnSaleProducts()
 	}
 	catch(Exception e)
 	{
+		System.out.println("Exception MySqlDataStoreUtilities getOnSaleProducts"+e);
+
 	}
 	return hm;
 }
@@ -654,6 +690,8 @@ try
 }
 catch(Exception e)
 {
+	System.out.println("Exception MySqlDataStoreUtilities deleteproducts"+e);
+
 	msg = "Proudct cannot be deleted";
 }
 return msg;
@@ -673,6 +711,8 @@ public static void deleteOrder(int orderId,String orderName)
 	}
 	catch(Exception e)
 	{
+		System.out.println("Exception MySqlDataStoreUtilities deleteOrder"+e);
+
 		
 	}
 }
@@ -712,7 +752,8 @@ public static void insertOrder(int orderId,String userName,String customerName,S
 	}
 	catch(Exception e)
 	{
-		
+		System.out.println("Exception MySqlDataStoreUtilities insertOrder"+e);
+
 	}		
 }
 
@@ -750,6 +791,8 @@ public static HashMap<Integer, ArrayList<OrderPayment>> selectOrder()
 	}
 	catch(Exception e)
 	{
+		System.out.println("Exception MySqlDataStoreUtilities selectOrder"+e);
+
 		
 	}
 	return orderPayments;
@@ -774,7 +817,8 @@ public static void insertUser(String username,String password,String repassword,
 	}
 	catch(Exception e)
 	{
-		
+		System.out.println("Exception MySqlDataStoreUtilities insertUser"+e);
+
 	}	
 }
 
@@ -794,6 +838,8 @@ public static HashMap<String,User> selectUser()
 }
 catch(Exception e)
 {
+	System.out.println("Exception MySqlDataStoreUtilities selectUser"+e);
+
 }
 return hm;			
 }

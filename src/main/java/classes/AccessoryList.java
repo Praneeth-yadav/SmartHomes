@@ -36,7 +36,7 @@ public class AccessoryList extends HttpServlet {
 		}
 		catch(Exception e)
 		{
-			
+			System.out.println("Exception allconsoles list "+e);
 		} 
 
 		/* Checks the Tablets type whether it is microsft or sony or nintendo */
@@ -45,14 +45,15 @@ public class AccessoryList extends HttpServlet {
 		}
 		catch(Exception e)
 		{
+			System.out.println("Exception allaccessories "+e);
 			
 		}
 		HashMap<String, Console> hm = new HashMap<String, Console>();
-			if(CategoryName.equals("blink"))
+			if(CategoryName.equalsIgnoreCase("blink"))
 			{
 				for(Map.Entry<String,Console> entry : allconsoles.entrySet())
 				{	
-					if(entry.getValue().getRetailer().equals("Blink"))
+					if(entry.getValue().getRetailer().equalsIgnoreCase("Blink"))
 					{
 					 hm.put(entry.getValue().getId(),entry.getValue());
 					 
@@ -60,21 +61,21 @@ public class AccessoryList extends HttpServlet {
 				}
 				
 			}
-			else if(CategoryName.equals("eufy"))
+			else if(CategoryName.equalsIgnoreCase("eufy"))
 			{	
 				for(Map.Entry<String,Console> entry : allconsoles.entrySet())
 				{	
-				  if(entry.getValue().getRetailer().equals("Eufy"))
+				  if(entry.getValue().getRetailer().equalsIgnoreCase("Eufy"))
 				 { 
 					hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
 			}
-			else if(CategoryName.equals("ring"))
+			else if(CategoryName.equalsIgnoreCase("ring"))
 			{
 				for(Map.Entry<String,Console> entry : allconsoles.entrySet())
 				{
-				  if(entry.getValue().getRetailer().equals("Ring"))
+				  if(entry.getValue().getRetailer().equalsIgnoreCase("Ring"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }

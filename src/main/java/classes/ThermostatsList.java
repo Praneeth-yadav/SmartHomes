@@ -33,6 +33,7 @@ public class ThermostatsList extends HttpServlet {
 		}
 		catch(Exception e)
 		{
+			System.out.println("Exception Thermostatlist doget"+e);
 
 		}
 
@@ -47,33 +48,33 @@ public class ThermostatsList extends HttpServlet {
 		}
 		else
 		{
-		  if(CategoryName.equals("amazon"))
+		  if(CategoryName.equalsIgnoreCase("amazon"))
 		  {
 			for(Map.Entry<String,Thermostat> entry : allthermos.entrySet())
 				{
-				if(entry.getValue().getRetailer().equals("Amazon"))
+				if(entry.getValue().getRetailer().equalsIgnoreCase("Amazon"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
 			name = "Amazon";
 		  }
-		  else if(CategoryName.equals("ecobee"))
+		  else if(CategoryName.equalsIgnoreCase("ecobee"))
 		  {
 			for(Map.Entry<String,Thermostat> entry : allthermos.entrySet())
 				{
-				if(entry.getValue().getRetailer().equals("Ecobee"))
+				if(entry.getValue().getRetailer().equalsIgnoreCase("Ecobee"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
 			name = "Ecobee";
 		  }
-		  else if(CategoryName.equals("google"))
+		  else if(CategoryName.equalsIgnoreCase("google"))
 		  {
 			for(Map.Entry<String,Thermostat> entry : allthermos.entrySet())
 				{
-				if(entry.getValue().getRetailer().equals("Google"))
+				if(entry.getValue().getRetailer().equalsIgnoreCase("Google"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }

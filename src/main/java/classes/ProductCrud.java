@@ -38,7 +38,7 @@ public class ProductCrud extends HttpServlet {
 			 "productOnSale = "+request.getParameter("productOnSale")+
 			 "productQuantity =" +Integer.parseInt(request.getParameter("productQuantity"))
 			 );
-			if (action.equals("add") || action.equals("update"))
+			if (action.equalsIgnoreCase("add") || action.equalsIgnoreCase("update"))
 			{	
 				 producttype = request.getParameter("producttype");
 				 productId   = request.getParameter("productId");
@@ -58,28 +58,28 @@ public class ProductCrud extends HttpServlet {
 			utility.printHtml("Header.html");
 			utility.printHtml("LeftNavigationBar.html");
 
-			if(action.equals("add"))
+			if(action.equalsIgnoreCase("add"))
 			{
-			  			if(producttype.equals("consoles")){
+			  			if(producttype.equalsIgnoreCase("consoles")){
 				  allconsoles = MySqlDataStoreUtilities.getConsoles();
 				  if(allconsoles.containsKey(productId)){
 					  msg = "Product already available";
 					  
 				  }
 					  
-			  }else if(producttype.equals("games"))
+			  }else if(producttype.equalsIgnoreCase("games"))
 			  {
 				  allgames = MySqlDataStoreUtilities.getGames();
 				  if(allgames.containsKey(productId)){
 					  msg = "Product already available";
 				  }
-			  }else if (producttype.equals("tablets"))
+			  }else if (producttype.equalsIgnoreCase("tablets"))
 			  {
 				  alltablets = MySqlDataStoreUtilities.getTablets();
 				  if(alltablets.containsKey(productId)){
 					  msg = "Product already available";
 				  }
-			  }else if (producttype.equals("accessories"))
+			  }else if (producttype.equalsIgnoreCase("accessories"))
 			  {  
 					if(!request.getParameter("product").isEmpty())
 						{
@@ -94,9 +94,9 @@ public class ProductCrud extends HttpServlet {
 									msg = "Product already available";
 								}
 							}
-//							else{
-//								msg = "The product related to accessories is not available";
-//							}
+							else{//check
+								msg = "The product related to accessories is not available";
+							}
 						
 						
 						}else{
@@ -104,7 +104,7 @@ public class ProductCrud extends HttpServlet {
 						}
 				  
 			  }	
-			  if (msg.equals("good"))
+			  if (msg.equalsIgnoreCase("good"))
 			  {  
 				  try
 				  {
@@ -112,39 +112,41 @@ public class ProductCrud extends HttpServlet {
 				  }
 				  catch(Exception e)
 				  { 
+						System.out.println("Exception productcurd dopost"+e);
+
 					msg = "Product cannot be inserted";
 				  }
 				  msg = "Product has been successfully added";
 			  }					
-			}else if(action.equals("update"))
+			}else if(action.equalsIgnoreCase("update"))
 			{
 				
-			  if(producttype.equals("consoles")){
+			  if(producttype.equalsIgnoreCase("consoles")){
 				  allconsoles = MySqlDataStoreUtilities.getConsoles();
 				  if(!allconsoles.containsKey(productId)){
 					  msg = "Product not available";
 				  }
 					  
-			  }else if(producttype.equals("games"))
+			  }else if(producttype.equalsIgnoreCase("games"))
 			  {
 				  allgames = MySqlDataStoreUtilities.getGames();
 				  if(!allgames.containsKey(productId)){
 					  msg = "Product not available";
 				  }
-			  }else if (producttype.equals("tablets"))
+			  }else if (producttype.equalsIgnoreCase("tablets"))
 			  {
 				  alltablets = MySqlDataStoreUtilities.getTablets();
 				  if(!alltablets.containsKey(productId)){
 					  msg = "Product not available";
 				  }
-			  }else if (producttype.equals("accessories"))
+			  }else if (producttype.equalsIgnoreCase("accessories"))
 			  {
 				  allaccessories = MySqlDataStoreUtilities.getAccessories();
 				  if(!allaccessories.containsKey(productId)){
 					  msg = "Product not available";
 				}
 			  }	
-			  if (msg.equals("good"))
+			  if (msg.equalsIgnoreCase("good"))
 			  {		
 				
 				  try
@@ -153,11 +155,13 @@ public class ProductCrud extends HttpServlet {
 				  }
 				  catch(Exception e)
 				  { 
+						System.out.println("Exception productcurd Product cannot be updated"+e);
+
 					msg = "Product cannot be updated";
 				  }
 				  msg = "Product has been successfully updated";
 			  } 
-			}else if(action.equals("delete"))
+			}else if(action.equalsIgnoreCase("delete"))
 			{
 				  msg = "bad";
 				  allconsoles = MySqlDataStoreUtilities.getConsoles();
@@ -182,7 +186,7 @@ public class ProductCrud extends HttpServlet {
 					  msg = "good";
 				}
 		       		
-				  if (msg.equals("good"))
+				  if (msg.equalsIgnoreCase("good"))
 				  {		
 					
 					  try
@@ -192,6 +196,8 @@ public class ProductCrud extends HttpServlet {
 					  }
 					  catch(Exception e)
 					  { 
+							System.out.println("Exception productcurd Product cannot be deleted"+e);
+
 						msg = "Product cannot be deleted";
 					  }
 					   msg = "Product has been successfully deleted";

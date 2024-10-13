@@ -37,13 +37,14 @@ public class Login extends HttpServlet {
 		}
 		catch(Exception e)
 		{
+			System.out.println("Exception login dopost"+e);
 
 		}
 		User user = hm.get(username);
 		if(user!=null)
 		{
 		 String user_password = user.getPassword();
-		//  if (password.equals(user_password) && usertype.equals(user.getUsertype()))
+		//  if (password.equalsIgnoreCase(user_password) && usertype.equalsIgnoreCase(user.getUsertype()))
 		// 	{
 		// 	HttpSession session = request.getSession(true);
 		// 	session.setAttribute("username", user.getName());
@@ -53,14 +54,14 @@ public class Login extends HttpServlet {
 		// 	return;
 
 		// 	}
-		if (user != null && password.equals(user_password)) {
+		if (user != null && password.equalsIgnoreCase(user_password)) {
     		HttpSession session = request.getSession(true);
     		session.setAttribute("username", user.getName());
     		session.setAttribute("usertype", user.getUsertype());
 
-    		if (session.getAttribute("usertype").equals("manager")) {
+    		if (((String) session.getAttribute("usertype")).equalsIgnoreCase("manager")) {
        			 response.sendRedirect("ManagerHome");
-    		} else if (session.getAttribute("usertype").equals("retailer")) {
+    		} else if (((String) session.getAttribute("usertype")).equalsIgnoreCase("retailer")) {
        			 response.sendRedirect("ViewOrder");
     		} else {
        			response.sendRedirect("Home");

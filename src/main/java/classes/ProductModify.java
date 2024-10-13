@@ -20,7 +20,7 @@ public class ProductModify extends HttpServlet {
 		Utilities utility = new Utilities(request, pw);
 		utility.printHtml("Header.html");
 		utility.printHtml("LeftNavigationBar.html");
-		if(action.equals("Addproduct"))
+		if(action.equalsIgnoreCase("Addproduct"))
 		{
 
 
@@ -63,7 +63,7 @@ public class ProductModify extends HttpServlet {
 
 
 
-		}else if (action.equals("Updateproduct"))
+		}else if (action.equalsIgnoreCase("Updateproduct"))
 		{
 		     pw.print("<div id='content'><div class='post'>");
 			pw.print("<h2 class='title meta'><a style='font-size: 24px;'>Update Product</a></h2>"

@@ -45,7 +45,7 @@ public class SalesReport extends HttpServlet {
 		
 		
 		
-		if(CategoryName.equals("soldproducts"))
+		if(CategoryName.equalsIgnoreCase("soldproducts"))
 		{
 			pw.print("<div id='content' style='overflow-y:auto';><div class='post'><h2 class='title meta'>");
 			pw.print("<a style='font-size: 24px;'>Total Number of Products Sold</a>");
@@ -65,7 +65,7 @@ public class SalesReport extends HttpServlet {
 			pw.print("</div></div></div>");
 		}
 		
-		if(CategoryName.equals("barchart"))	
+		if(CategoryName.equalsIgnoreCase("barchart"))	
 		{
 			pw.print("Bar Chart with the product names and the total sales for every product");
             pw.println("<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>");
@@ -102,7 +102,7 @@ public class SalesReport extends HttpServlet {
 			pw.println("<div id='chart_div' style='width:900px; height:500px; left: 250px; position: relative'></div>");
 		}
 		
-		if(CategoryName.equals("dailytransaction"))
+		if(CategoryName.equalsIgnoreCase("dailytransaction"))
 		{
 			pw.print("<div id='content'><div class='post'><h2 class='title meta'>");
 			pw.print("<a style='font-size: 24px;'>Daily Transaction</a>");

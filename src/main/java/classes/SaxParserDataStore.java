@@ -134,7 +134,7 @@ https://docs.oracle.com/javase/7/docs/api/org/xml/sax/helpers/DefaultHandler.htm
 			thermostat= new Thermostat();
             thermostat.setId(attributes.getValue("id"));
         }
-        if (elementName.equals("accessory") &&  !currentElement.equals("console"))
+        if (elementName.equalsIgnoreCase("accessory") &&  !currentElement.equalsIgnoreCase("console"))
 		{
 			currentElement="accessory";
 			accessory=new Accessory();
@@ -154,175 +154,175 @@ https://docs.oracle.com/javase/7/docs/api/org/xml/sax/helpers/DefaultHandler.htm
     @Override
     public void endElement(String str1, String str2, String element) throws SAXException {
  
-        if (element.equals("console")) {
+        if (element.equalsIgnoreCase("console")) {
 			consoles.put(console.getId(),console);
 			return;
         }
  
-        if (element.equals("tablet")) {	
+        if (element.equalsIgnoreCase("tablet")) {	
 			tablets.put(tablet.getId(),tablet);
 			return;
         }
-        if (element.equals("game")) {	  
+        if (element.equalsIgnoreCase("game")) {	  
 			games.put(game.getId(),game);
 			return;
         }
-		if (element.equals("lightning")) {	  
+		if (element.equalsIgnoreCase("lightning")) {	  
 			lightnings.put(lightning.getId(),lightning);
 			return;
         }
-		if (element.equals("thermostat")) {	  
+		if (element.equalsIgnoreCase("thermostat")) {	  
 			thermostats.put(thermostat.getId(),thermostat);
 			return;
         }
-        if (element.equals("accessory") && currentElement.equals("accessory")) {
+        if (element.equalsIgnoreCase("accessory") && currentElement.equalsIgnoreCase("accessory")) {
 			accessories.put(accessory.getId(),accessory);       
 			return; 
         }
-		if (element.equals("accessory") && currentElement.equals("console")) 
+		if (element.equalsIgnoreCase("accessory") && currentElement.equalsIgnoreCase("console")) 
 		{
 			accessoryHashMap.put(elementValueRead,elementValueRead);
 		}
-      	if (element.equalsIgnoreCase("accessories") && currentElement.equals("console")) {
+      	if (element.equalsIgnoreCase("accessories") && currentElement.equalsIgnoreCase("console")) {
 			console.setAccessories(accessoryHashMap);
 			accessoryHashMap=new HashMap<String,String>();
 			return;
 		}
-		if (element.equals("store")) {   
+		if (element.equalsIgnoreCase("store")) {   
             stores.put(store.getId(),store);
             return;
         }
         if (element.equalsIgnoreCase("image")) {
-		    if(currentElement.equals("console"))
+		    if(currentElement.equalsIgnoreCase("console"))
 				console.setImage(elementValueRead);
-        	if(currentElement.equals("game"))
+        	if(currentElement.equalsIgnoreCase("game"))
 				game.setImage(elementValueRead);
-            if(currentElement.equals("tablet"))
+            if(currentElement.equalsIgnoreCase("tablet"))
 				tablet.setImage(elementValueRead);
-			if(currentElement.equals("lightning"))
+			if(currentElement.equalsIgnoreCase("lightning"))
 				lightning.setImage(elementValueRead);
-			if(currentElement.equals("thermostat"))
+			if(currentElement.equalsIgnoreCase("thermostat"))
 				thermostat.setImage(elementValueRead);
-            if(currentElement.equals("accessory"))
+            if(currentElement.equalsIgnoreCase("accessory"))
 				accessory.setImage(elementValueRead);         
 			return;
         }
         
 
 		if (element.equalsIgnoreCase("discount")) {
-            if(currentElement.equals("console"))
+            if(currentElement.equalsIgnoreCase("console"))
 				console.setDiscount(Double.parseDouble(elementValueRead));
-        	if(currentElement.equals("game"))
+        	if(currentElement.equalsIgnoreCase("game"))
 				game.setDiscount(Double.parseDouble(elementValueRead));
-            if(currentElement.equals("tablet"))
+            if(currentElement.equalsIgnoreCase("tablet"))
 				tablet.setDiscount(Double.parseDouble(elementValueRead));
-			if(currentElement.equals("lightning"))
+			if(currentElement.equalsIgnoreCase("lightning"))
 				lightning.setDiscount(Double.parseDouble(elementValueRead));
-			if(currentElement.equals("thermostat"))
+			if(currentElement.equalsIgnoreCase("thermostat"))
 				thermostat.setDiscount(Double.parseDouble(elementValueRead));
-            if(currentElement.equals("accessory"))
+            if(currentElement.equalsIgnoreCase("accessory"))
 				accessory.setDiscount(Double.parseDouble(elementValueRead));          
 			return;
 	    }
 
 
 		if (element.equalsIgnoreCase("condition")) {
-            if(currentElement.equals("console"))
+            if(currentElement.equalsIgnoreCase("console"))
 				console.setCondition(elementValueRead);
-        	if(currentElement.equals("game"))
+        	if(currentElement.equalsIgnoreCase("game"))
 				game.setCondition(elementValueRead);
-            if(currentElement.equals("tablet"))
+            if(currentElement.equalsIgnoreCase("tablet"))
 				tablet.setCondition(elementValueRead);
-			if(currentElement.equals("lightning"))
+			if(currentElement.equalsIgnoreCase("lightning"))
 				lightning.setCondition(elementValueRead);
-			if(currentElement.equals("thermostat"))
+			if(currentElement.equalsIgnoreCase("thermostat"))
 				thermostat.setCondition(elementValueRead);
-            if(currentElement.equals("accessory"))
+            if(currentElement.equalsIgnoreCase("accessory"))
 				accessory.setCondition(elementValueRead);          
 			return;  
 		}
 
 		if (element.equalsIgnoreCase("manufacturer")) {
-            if(currentElement.equals("console"))
+            if(currentElement.equalsIgnoreCase("console"))
 				console.setRetailer(elementValueRead);
-        	if(currentElement.equals("game"))
+        	if(currentElement.equalsIgnoreCase("game"))
 				game.setRetailer(elementValueRead);
-            if(currentElement.equals("tablet"))
+            if(currentElement.equalsIgnoreCase("tablet"))
 				tablet.setRetailer(elementValueRead);
-			if(currentElement.equals("lightning"))
+			if(currentElement.equalsIgnoreCase("lightning"))
 				lightning.setRetailer(elementValueRead);
-			if(currentElement.equals("thermostat"))
+			if(currentElement.equalsIgnoreCase("thermostat"))
 				thermostat.setRetailer(elementValueRead);
-            if(currentElement.equals("accessory"))
+            if(currentElement.equalsIgnoreCase("accessory"))
 				accessory.setRetailer(elementValueRead);          
 			return;
 		}
 
         if (element.equalsIgnoreCase("name")) {
-            if(currentElement.equals("console"))
+            if(currentElement.equalsIgnoreCase("console"))
 				console.setName(elementValueRead);
-        	if(currentElement.equals("game"))
+        	if(currentElement.equalsIgnoreCase("game"))
 				game.setName(elementValueRead);
-            if(currentElement.equals("tablet"))
+            if(currentElement.equalsIgnoreCase("tablet"))
 				tablet.setName(elementValueRead);
-			if(currentElement.equals("lightning"))
+			if(currentElement.equalsIgnoreCase("lightning"))
 				lightning.setName(elementValueRead);
-			if(currentElement.equals("thermostat"))
+			if(currentElement.equalsIgnoreCase("thermostat"))
 				thermostat.setName(elementValueRead);
-            if(currentElement.equals("accessory"))
+            if(currentElement.equalsIgnoreCase("accessory"))
 				accessory.setName(elementValueRead);          
 			return;
 	    }
 	
         if(element.equalsIgnoreCase("price")){
-			if(currentElement.equals("console"))
+			if(currentElement.equalsIgnoreCase("console"))
 				console.setPrice(Double.parseDouble(elementValueRead));
-        	if(currentElement.equals("game"))
+        	if(currentElement.equalsIgnoreCase("game"))
 				game.setPrice(Double.parseDouble(elementValueRead));
-            if(currentElement.equals("tablet"))
+            if(currentElement.equalsIgnoreCase("tablet"))
 				tablet.setPrice(Double.parseDouble(elementValueRead));
-			if(currentElement.equals("lightning"))
+			if(currentElement.equalsIgnoreCase("lightning"))
 				lightning.setPrice(Double.parseDouble(elementValueRead));
-			if(currentElement.equals("thermostat"))
+			if(currentElement.equalsIgnoreCase("thermostat"))
 				thermostat.setPrice(Double.parseDouble(elementValueRead));
-            if(currentElement.equals("accessory"))
+            if(currentElement.equalsIgnoreCase("accessory"))
 				accessory.setPrice(Double.parseDouble(elementValueRead));          
 			return;
         }
 
 		if(element.equalsIgnoreCase("productOnSale")){
-			if(currentElement.equals("console"))
+			if(currentElement.equalsIgnoreCase("console"))
 				console.setproductOnSale(elementValueRead);
-        	if(currentElement.equals("game"))
+        	if(currentElement.equalsIgnoreCase("game"))
 				game.setproductOnSale(elementValueRead);
-            if(currentElement.equals("tablet"))
+            if(currentElement.equalsIgnoreCase("tablet"))
 				tablet.setproductOnSale(elementValueRead);
-			if(currentElement.equals("lightning"))
+			if(currentElement.equalsIgnoreCase("lightning"))
 				lightning.setproductOnSale(elementValueRead);
-			if(currentElement.equals("thermostat"))
+			if(currentElement.equalsIgnoreCase("thermostat"))
 				thermostat.setproductOnSale(elementValueRead);
-            if(currentElement.equals("accessory"))
+            if(currentElement.equalsIgnoreCase("accessory"))
 				accessory.setproductOnSale(elementValueRead);          
 			return;
         }
 
 		if(element.equalsIgnoreCase("productQuantity")){
-			if(currentElement.equals("console"))
+			if(currentElement.equalsIgnoreCase("console"))
 				console.setproductQuantity(Integer.parseInt(elementValueRead));
-        	if(currentElement.equals("game"))
+        	if(currentElement.equalsIgnoreCase("game"))
 				game.setproductQuantity(Integer.parseInt(elementValueRead));
-            if(currentElement.equals("tablet"))
+            if(currentElement.equalsIgnoreCase("tablet"))
 				tablet.setproductQuantity(Integer.parseInt(elementValueRead));
-			if(currentElement.equals("lightning"))
+			if(currentElement.equalsIgnoreCase("lightning"))
 				lightning.setproductQuantity(Integer.parseInt(elementValueRead));
-			if(currentElement.equals("thermostat"))
+			if(currentElement.equalsIgnoreCase("thermostat"))
 				thermostat.setproductQuantity(Integer.parseInt(elementValueRead));
-            if(currentElement.equals("accessory"))
+            if(currentElement.equalsIgnoreCase("accessory"))
 				accessory.setproductQuantity(Integer.parseInt(elementValueRead));          
 			return;
         }
 
-		if(currentElement.equals("store")){
+		if(currentElement.equalsIgnoreCase("store")){
 			if(element.equalsIgnoreCase("name")){
 				store.setName(elementValueRead);
 			}

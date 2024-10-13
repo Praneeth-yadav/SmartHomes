@@ -42,7 +42,7 @@ public class AutoCompleteServlet extends HttpServlet {
 			String action = request.getParameter("action");
 			searchId = request.getParameter("searchId");
 			StringBuffer sb = new StringBuffer();
-			if (searchId != null && action.equals("complete")) {
+			if (searchId != null && action.equalsIgnoreCase("complete")) {
 				searchId = searchId.trim().toLowerCase();
 			}
 			if(searchId==null)
@@ -50,10 +50,10 @@ public class AutoCompleteServlet extends HttpServlet {
 				context.getRequestDispatcher("/Error").forward(request, response);
 			}
 			boolean namesAdded = false;
-			if (action.equals("complete"))
+			if (action.equalsIgnoreCase("complete"))
 			{
 			// check if user sent empty string
-				if (!searchId.equals(""))
+				if (!searchId.equalsIgnoreCase(""))
 				{
 					AjaxUtility a=new AjaxUtility();
 					sb=a.readdata(searchId);
@@ -73,7 +73,7 @@ public class AutoCompleteServlet extends HttpServlet {
 					}
 				}
 			}
-			if (action.equals("lookup"))
+			if (action.equalsIgnoreCase("lookup"))
 			{
 
 				HashMap<String,Product> data=AjaxUtility.getData();
@@ -87,6 +87,8 @@ public class AutoCompleteServlet extends HttpServlet {
 		}
 		catch(Exception e)
 		{
+			System.out.println("Exception Autocomplete doGet"+e);
+
 		}
     }
 }

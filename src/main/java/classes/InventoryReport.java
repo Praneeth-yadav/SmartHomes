@@ -46,7 +46,7 @@ public class InventoryReport extends HttpServlet {
 
 
 
-		if(CategoryName.equals("allproducts"))
+		if(CategoryName.equalsIgnoreCase("allproducts"))
 		{
 			pw.print("<div id='content'><div class='post'><h2 class='title meta'>");
 			pw.print("<a style='font-size: 24px;'>Inventory</a>");
@@ -65,7 +65,7 @@ public class InventoryReport extends HttpServlet {
 			pw.print("</div></div></div>");
 		}
 
-		if(CategoryName.equals("productsonrebate"))
+		if(CategoryName.equalsIgnoreCase("productsonrebate"))
 		{
 			pw.print("<div id='content'><div class='post'><h2 class='title meta'>");
 			pw.print("<a style='font-size: 24px;'>Products On Rebate</a>");
@@ -84,7 +84,7 @@ public class InventoryReport extends HttpServlet {
 			pw.print("</div></div></div>");
 		}
 
-		if(CategoryName.equals("productsonsale"))
+		if(CategoryName.equalsIgnoreCase("productsonsale"))
 		{
 			pw.print("<div id='content'><div class='post'><h2 class='title meta'>");
 			pw.print("<a style='font-size: 24px;'>Products On Sale</a>");
@@ -102,7 +102,7 @@ public class InventoryReport extends HttpServlet {
 			pw.print("</div></div></div>");
 		}
 
-		if(CategoryName.equals("barchart"))
+		if(CategoryName.equalsIgnoreCase("barchart"))
 		{
 			pw.print("Bar Chart with the product names and the total sales for every product");
             pw.println("<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>");

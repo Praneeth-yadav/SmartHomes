@@ -147,8 +147,11 @@ public class WriteReview extends HttpServlet {
 	                     	
                     }
               	catch(Exception e)
-		{
+		{					
+              		System.out.println("Exception write review	"+e);
+
                  System.out.println(e.getMessage());
+                e.printStackTrace();
 		}  			
        
 	 	

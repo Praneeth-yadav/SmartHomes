@@ -56,7 +56,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		order details will be fetched and displayed in  a table 
 		Also user will get an button to cancel the order */
 
-		if(request.getParameter("Order")!=null && request.getParameter("Order").equals("ViewOrder"))
+		if(request.getParameter("Order")!=null && request.getParameter("Order").equalsIgnoreCase("ViewOrder"))
 		{
 			HttpSession session = request.getSession(true);;
 			if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty() )
@@ -71,7 +71,8 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 				}
 				catch(Exception e)
 				{
-				
+					System.out.println("Exception vieworder doGet"+e);
+
 				}
 				int size=0;
 
@@ -81,13 +82,13 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 				if(orderPayments.get(orderId)!=null)
 				{
 				for(OrderPayment od:orderPayments.get(orderId))
-				if (session.getAttribute("usertype").equals("retailer"))
+				if (((String) session.getAttribute("usertype")).equalsIgnoreCase("retailer"))
 				{	
 					size= orderPayments.get(orderId).size();
 				}
 				else
 				{		
-				if(od.getUserName().equals(username))
+				if(od.getUserName().equalsIgnoreCase(username))
 				size= orderPayments.get(orderId).size();
 				}
 				}
@@ -121,7 +122,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 			}	
 		}
 		//if the user presses cancel order from order details shown then process to cancel the order
-		if(request.getParameter("Order")!=null && request.getParameter("Order").equals("CancelOrder"))
+		if(request.getParameter("Order")!=null && request.getParameter("Order").equalsIgnoreCase("CancelOrder"))
 		{
 			String orderName=request.getParameter("orderName");
 			if(request.getParameter("orderName") != null)
@@ -138,12 +139,13 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 				}	
 				catch(Exception e)
 				{
-			
+					System.out.println("Exception vieworder doGet2"+e);
+
 				}
 				//get the exact order with same ordername and add it into cancel list to remove it later
 				for (OrderPayment oi : orderPayments.get(orderId)) 
 					{
-							if(oi.getOrderName().equals(orderName))
+							if(oi.getOrderName().equalsIgnoreCase(orderName))
 							{
 								MySqlDataStoreUtilities.deleteOrder(orderId,orderName);
 								ListOrderPayment.add(oi);

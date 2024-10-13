@@ -48,7 +48,7 @@ public class Utilities extends HttpServlet{
 			if (session.getAttribute("username")!=null){
 				String username = session.getAttribute("username").toString();
 				username = Character.toUpperCase(username.charAt(0)) + username.substring(1);
-				if(session.getAttribute("usertype").equals("manager"))
+				if(((String) session.getAttribute("usertype")).equalsIgnoreCase("manager"))
 				{
 					result = result + "<li><a href='ProductModify?button=Addproduct'><span class='glyphicon'>Addproduct</span></a></li>"
 						+ "<li><a href='ProductModify?button=Updateproduct'><span class='glyphicon'>Updateproduct</span></a></li>"
@@ -59,7 +59,7 @@ public class Utilities extends HttpServlet{
 						+ "<li><a href='Logout'><span class='glyphicon'>Logout</span></a></li>";
 				}
 
-				else if(session.getAttribute("usertype").equals("retailer")){
+				else if(((String) session.getAttribute("usertype")).equalsIgnoreCase("retailer")){
 					result = result + "<li><a href='Registration'><span class='glyphicon'>Create Customer</span></a></li>"
 						+ "<li><a href='ViewOrder'><span class='glyphicon'>ViewOrder</span></a></li>"
 						+ "<li><a><span class='glyphicon'>Hello,"+username+"</span></a></li>"
@@ -167,6 +167,8 @@ public class Utilities extends HttpServlet{
 		}
 		catch(Exception e)
 		{
+			System.out.println("Exception utility get user"+e);
+
 		}
 		User user = hm.get(username());
 		return user;
@@ -193,6 +195,8 @@ public class Utilities extends HttpServlet{
 		}
 		catch(Exception e)
 		{
+			System.out.println("Exception utility getOrderPaymentSize"+e);
+
 
 		}
 		for(Map.Entry<Integer, ArrayList<OrderPayment>> entry : orderPayments.entrySet()){
@@ -224,13 +228,14 @@ public class Utilities extends HttpServlet{
 			HashMap<String,Lightning> alllights = new HashMap<> ();
 			HashMap<String,Thermostat> allthermos = new HashMap<> ();
 			HashMap<String,Accessory> allaccessories=new HashMap<>();
-		if(type.equals("consoles")){
+		if(type.equalsIgnoreCase("consoles")){
 			Console console;
 			try{
 			allconsoles = MySqlDataStoreUtilities.getConsoles();
 
 			}
 			catch(Exception e){
+				System.out.println("Exception utility storeProduct1"+e);
 
 			}
 			console = allconsoles.get(name);
@@ -238,59 +243,64 @@ public class Utilities extends HttpServlet{
 			OrderItem orderitem = new OrderItem(console.getName(), console.getPrice(), console.getImage(), console.getRetailer());
 			orderItems.add(orderitem);
 		}
-		if(type.equals("games")){
+		if(type.equalsIgnoreCase("games")){
 			Game game = null;
 			try{
 			allgames = MySqlDataStoreUtilities.getGames();
 			}
 			catch(Exception e){
+				System.out.println("Exception utility storeProduct2"+e);
 
 			}
 			game = allgames.get(name);
 			OrderItem orderitem = new OrderItem(game.getName(), game.getPrice(), game.getImage(), game.getRetailer());
 			orderItems.add(orderitem);
 		}
-		if(type.equals("tablets")){
+		if(type.equalsIgnoreCase("tablets")){
 			Tablet tablet = null;
 			try{
 			alltablets = MySqlDataStoreUtilities.getTablets();
 			}
 			catch(Exception e){
+				System.out.println("Exception utility storeProduct3"+e);
 
 			}
 			tablet = alltablets.get(name);
 			OrderItem orderitem = new OrderItem(tablet.getName(), tablet.getPrice(), tablet.getImage(), tablet.getRetailer());
 			orderItems.add(orderitem);
 		}
-		if(type.equals("lightnings")){
+		if(type.equalsIgnoreCase("lightnings")){
 			Lightning lightning = null;
 			try{
 			alllights = MySqlDataStoreUtilities.getLightnings();
 			}
 			catch(Exception e){
+				System.out.println("Exception utility storeProduct4"+e);
 
 			}
 			lightning = alllights.get(name);
 			OrderItem orderitem = new OrderItem(lightning.getName(), lightning.getPrice(), lightning.getImage(), lightning.getRetailer());
 			orderItems.add(orderitem);
 		}
-		if(type.equals("thermostats")){
+		if(type.equalsIgnoreCase("thermostats")){
 			Thermostat thermostat = null;
 			try{
 			allthermos = MySqlDataStoreUtilities.getThermostats();
 			}
 			catch(Exception e){
+				System.out.println("Exception utility storeProduct5"+e);
 
 			}
 			thermostat = allthermos.get(name);
 			OrderItem orderitem = new OrderItem(thermostat.getName(), thermostat.getPrice(), thermostat.getImage(), thermostat.getRetailer());
 			orderItems.add(orderitem);
 		}
-		if(type.equals("accessories")){
+		if(type.equalsIgnoreCase("accessories")){
 			try{
 			allaccessories = MySqlDataStoreUtilities.getAccessories();
 			}
 			catch(Exception e){
+				System.out.println("Exception utility storeProduct6"+e);
 
 			}
 			Accessory accessory = allaccessories.get(name);
@@ -310,6 +320,7 @@ public class Utilities extends HttpServlet{
 		}
 		catch(Exception e)
 		{
+			System.out.println("Exception utility storePayment1"+e);
 
 		}
 		if(orderPayments==null)
@@ -329,7 +340,7 @@ public class Utilities extends HttpServlet{
 
 			// add order details into database
 		try
-		{	if(session.getAttribute("usertype").equals("retailer"))
+		{	if(((String) session.getAttribute("usertype")).equalsIgnoreCase("retailer"))
 			{
 				MySqlDataStoreUtilities.insertOrder(orderId,customer,customer,orderName,orderPrice,userAddress,creditCardNo,storeAddress,storeId);
 			}else
@@ -343,7 +354,8 @@ public class Utilities extends HttpServlet{
 	}
      public String storeReview(String productname,String producttype,String productprice,String productmaker,String reviewrating,String storeid,String storecity,String storestate,String storezip,String productsale,String rebate,String userid,String age,String gender,String occupation,String reviewdate,String  reviewtext){
 	String message=MongoDBDataStoreUtilities.insertReview(productname,username(),producttype,productprice,productmaker,reviewrating,storeid,storecity,storestate,storezip,productsale,rebate,userid,age,gender,occupation,reviewdate,reviewtext);
-		if(!message.equals("Successfull"))
+	System.out.println("message"+message);	
+	if(!message.equalsIgnoreCase("Successfull"))
 		{ return "UnSuccessfull";
 		}
 		else
@@ -355,6 +367,8 @@ public class Utilities extends HttpServlet{
 		}
 		catch(Exception e)
 		{
+			System.out.println("Exception storeReview "+e);
+
 
 		}
 		if(reviews==null)

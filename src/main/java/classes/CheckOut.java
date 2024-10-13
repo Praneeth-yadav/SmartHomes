@@ -148,7 +148,7 @@ public class CheckOut extends HttpServlet {
 		// pw.print("<option value='address10'>60890</option>");
 		pw.print("</td></tr>");
 
-		if(session.getAttribute("usertype").equals("retailer"))
+		if(((String) session.getAttribute("usertype")).equalsIgnoreCase("retailer"))
 		{
 		pw.print("<tr><td>");
 	    pw.print("Customer Name</td>");
@@ -163,6 +163,8 @@ public class CheckOut extends HttpServlet {
 	    }
         catch(Exception e)
 		{
+			System.out.println("Exception storeOrders"+e);
+
          
 		}  			
 		}

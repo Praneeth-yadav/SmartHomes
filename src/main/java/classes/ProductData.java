@@ -96,6 +96,8 @@ response.setContentType("text/html");
 		}
 		catch(Exception e)
 		{
+			System.out.println("Exception ProductData"+e);
+
 
 		}
 	}

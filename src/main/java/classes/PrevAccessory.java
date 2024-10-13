@@ -41,33 +41,33 @@ public class PrevAccessory extends HttpServlet {
 		}
 		else
 		{
-		   if(CategoryName.equals("blink"))
+		   if(CategoryName.equalsIgnoreCase("blink"))
 		   {
 			 for(Map.Entry<String,Console> entry : SaxParserDataStore.consoles.entrySet())
 			 {
-				if(entry.getValue().getRetailer().equals("Blink"))
+				if(entry.getValue().getRetailer().equalsIgnoreCase("Blink"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 			 }
 				name = "Blink";
 		   }
-		   else if(CategoryName.equals("eufy"))
+		   else if(CategoryName.equalsIgnoreCase("eufy"))
 		    {
 			for(Map.Entry<String,Console> entry : SaxParserDataStore.consoles.entrySet())
 				{
-				 if(entry.getValue().getRetailer().equals("Eufy"))
+				 if(entry.getValue().getRetailer().equalsIgnoreCase("Eufy"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
 				 name = "Eufy";
 			}
-			else if(CategoryName.equals("ring"))
+			else if(CategoryName.equalsIgnoreCase("ring"))
 			{
 				for(Map.Entry<String,Console> entry : SaxParserDataStore.consoles.entrySet())
 				{
-				 if(entry.getValue().getRetailer().equals("Ring"))
+				 if(entry.getValue().getRetailer().equalsIgnoreCase("Ring"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
@@ -92,7 +92,7 @@ public class PrevAccessory extends HttpServlet {
 		for(Map.Entry<String, Console> entry : hm.entrySet())
 		{
 			Console console = entry.getValue();
-			if (console.getName().equals(ProductName))
+			if (console.getName().equalsIgnoreCase(ProductName))
 			{
 			pw.print("<tr>");
 			pw.print("<td><div id='shop_item'>");
