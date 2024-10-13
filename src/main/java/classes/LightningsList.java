@@ -45,33 +45,33 @@ public class LightningsList extends HttpServlet {
 		}
 		else
 		{
-		  if(CategoryName.equals("lifx"))
+		  if(CategoryName.equalsIgnoreCase("lifx"))
 		  {
 			for(Map.Entry<String,Lightning> entry : alllights.entrySet())
 				{
-				if(entry.getValue().getRetailer().equals("Lifx"))
+				if(entry.getValue().getRetailer().equalsIgnoreCase("Lifx"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
 			name = "Lifx";
 		  }
-		  else if(CategoryName.equals("tapo"))
+		  else if(CategoryName.equalsIgnoreCase("tapo"))
 		  {
 			for(Map.Entry<String,Lightning> entry : alllights.entrySet())
 				{
-				if(entry.getValue().getRetailer().equals("Tapo"))
+				if(entry.getValue().getRetailer().equalsIgnoreCase("Tapo"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}	
 			name = "Tapo";
 		  }
-		  else if(CategoryName.equals("wipro"))
+		  else if(CategoryName.equalsIgnoreCase("wipro"))
 		  {
 			for(Map.Entry<String,Lightning> entry : alllights.entrySet())
 				{
-				if(entry.getValue().getRetailer().equals("Wipro"))
+				if(entry.getValue().getRetailer().equalsIgnoreCase("Wipro"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }

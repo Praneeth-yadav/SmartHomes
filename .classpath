@@ -8,14 +8,10 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="/Users/praneetheraganaboina/eclipse-workspace/pro1/src/main/webapp/WEB-INF/lib/c2dm-library-1.0.0.jar"/>
-	<classpathentry kind="lib" path="/Users/praneetheraganaboina/eclipse-workspace/pro1/src/main/webapp/WEB-INF/lib/gson-2.11.0.jar"/>
-	<classpathentry kind="lib" path="/Users/praneetheraganaboina/eclipse-workspace/pro1/src/main/webapp/WEB-INF/lib/mongo-java-driver-3.12.11.jar"/>
-	<classpathentry kind="lib" path="/Users/praneetheraganaboina/eclipse-workspace/pro1/src/main/webapp/WEB-INF/lib/mysql-connector-java-8.0.13.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/c2dm-library-1.0.0.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/gson-2.11.0.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/mongo-java-driver-3.12.11.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/mysql-connector-java-8.0.13.jar"/>
-	<classpathentry kind="lib" path="/Users/praneetheraganaboina/Downloads/javax.servlet-api-3.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/nithingeereddy/Downloads/c2dm-library-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/nithingeereddy/Downloads/gson-2.11.0.jar"/>
+	<classpathentry kind="lib" path="/Users/nithingeereddy/Downloads/javax.servlet-api-3.0.1 (1).jar"/>
+	<classpathentry kind="lib" path="/Users/nithingeereddy/Downloads/mongo-java-driver-3.12.11.jar"/>
+	<classpathentry kind="lib" path="/Users/nithingeereddy/eclipse-workspace/Pro1/src/main/webapp/WEB-INF/lib/mysql-connector-j-8.0.33.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

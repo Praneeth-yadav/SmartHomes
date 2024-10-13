@@ -47,33 +47,33 @@ public class GamesList extends HttpServlet {
 		}
 		else
 		{
-		  if(CategoryName.equals("elemake"))
+		  if(CategoryName.equalsIgnoreCase("elemake"))
 		  {
 			for(Map.Entry<String,Game> entry : allgames.entrySet())
 				{
-				if(entry.getValue().getRetailer().equals("Elemake"))
+				if(entry.getValue().getRetailer().equalsIgnoreCase("Elemake"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
 			name = "Elemake";
 		  }
-		  else if(CategoryName.equals("kwikset"))
+		  else if(CategoryName.equalsIgnoreCase("kwikset"))
 		  {
 			for(Map.Entry<String,Game> entry : allgames.entrySet())
 				{
-				if(entry.getValue().getRetailer().equals("Kwikset"))
+				if(entry.getValue().getRetailer().equalsIgnoreCase("Kwikset"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
 			name = "Kwikset";
 		  }
-		  else if(CategoryName.equals("wyze"))
+		  else if(CategoryName.equalsIgnoreCase("wyze"))
 		  {
 			for(Map.Entry<String,Game> entry : allgames.entrySet())
 				{
-				if(entry.getValue().getRetailer().equals("Wyze"))
+				if(entry.getValue().getRetailer().equalsIgnoreCase("Wyze"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }

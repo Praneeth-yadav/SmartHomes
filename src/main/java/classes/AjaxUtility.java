@@ -21,7 +21,7 @@ public class AjaxUtility {
 		try
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smarthomesdb?serverTimezone=UTC","root","Smallworld@9286");
+			conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/smarthomesdb?serverTimezone=UTC","root","Nithin@136");
 			message="Successfull";
 			return message;
 		}

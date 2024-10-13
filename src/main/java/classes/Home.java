@@ -24,8 +24,7 @@ public class Home extends HttpServlet {
 
 		Utilities utility = new Utilities(request,pw);
 		utility.printHtml("Header.html");
-		utility.printHtml("LeftNavigationBar.html");
-		utility.printHtml("Content.html");
+		utility.printHtml("con.html");
 		utility.printHtml("Footer.html");
 
 	}

@@ -44,33 +44,33 @@ public class TabletList extends HttpServlet {
 		} 
 		else 
 		{
-			if(CategoryName.equals("alexa")) 
+			if(CategoryName.equalsIgnoreCase("alexa")) 
 			{	
 				for(Map.Entry<String,Tablet> entry : alltablets.entrySet())
 				{
-				  if(entry.getValue().getRetailer().equals("alexa"))
+				  if(entry.getValue().getRetailer().equalsIgnoreCase("alexa"))
 				  {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				  }
 				}
 				name ="Alexa";
 			} 
-			else if (CategoryName.equals("echoDot"))
+			else if (CategoryName.equalsIgnoreCase("echoDot"))
 			{
 				for(Map.Entry<String,Tablet> entry : alltablets.entrySet())
 				{
-				  if(entry.getValue().getRetailer().equals("EchoDot"))
+				  if(entry.getValue().getRetailer().equalsIgnoreCase("EchoDot"))
 				  {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				  }
 				}
 				name = "EchoDot";
 			} 
-			else if (CategoryName.equals("google")) 
+			else if (CategoryName.equalsIgnoreCase("google")) 
 			{
 				for(Map.Entry<String,Tablet> entry : alltablets.entrySet())
 				{
-				  if(entry.getValue().getRetailer().equals("Google"))
+				  if(entry.getValue().getRetailer().equalsIgnoreCase("Google"))
 				 {
 					hm.put(entry.getValue().getId(),entry.getValue());
 				 }

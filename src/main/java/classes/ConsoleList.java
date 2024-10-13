@@ -39,12 +39,12 @@ public class ConsoleList extends HttpServlet {
 		}
 		else
 		{
-		   if(CategoryName.equals("blink"))
+		   if(CategoryName.equalsIgnoreCase("blink"))
 		   {
 			 for(Map.Entry<String,Console> entry : allconsoles.entrySet())
 			 {
 				 
-				if(entry.getValue().getRetailer().equals("Blink"))
+				if(entry.getValue().getRetailer().equalsIgnoreCase("Blink"))
 				 {
 					
 						
@@ -55,22 +55,22 @@ public class ConsoleList extends HttpServlet {
 			 }
 				name = "Blink";
 		   }
-		   else if(CategoryName.equals("eufy"))
+		   else if(CategoryName.equalsIgnoreCase("eufy"))
 		    {
 			for(Map.Entry<String,Console> entry : allconsoles.entrySet())
 				{
-				 if(entry.getValue().getRetailer().equals("Eufy"))
+				 if(entry.getValue().getRetailer().equalsIgnoreCase("Eufy"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
 				 name = "Eufy";
 			}
-			else if(CategoryName.equals("ring"))
+			else if(CategoryName.equalsIgnoreCase("ring"))
 			{
 				for(Map.Entry<String,Console> entry : allconsoles.entrySet())
 				{
-				 if(entry.getValue().getRetailer().equals("Ring"))
+				 if(entry.getValue().getRetailer().equalsIgnoreCase("Ring"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Home Devices</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+#sidebar {
+    width: 20%;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#sidebar h2 {
+    color: #2c3e50;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar ul ul {
+    padding-left: 15px;
+}
+
+#sidebar a {
+    color: #34495e;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+
+#sidebar a:hover {
+    color: #3498db;
+}
+
+#content {
+    width: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.post {
+    margin-bottom: 30px;
+}
+
+.title {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.entry {
+    text-align: center;
+}
+
+.entry img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#bestseller {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+#shop_item {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+}
+
+#shop_item h3 {
+    color: #2c3e50;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#shop_item strong {
+    color: #e74c3c;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+#item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.btnbuy, .btnreview {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+
+.btnbuy:hover, .btnreview:hover {
+    background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    #sidebar, #content {
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <!-- Left navigation bar -->
+    <div id="sidebar">
+        <h2>Smart Doorbells</h2>
+        <ul>
+            <li><a href="ConsoleList?maker=ring&console=Xbox One">Ring</a></li>
+            <li><a href="ConsoleList?maker=nest&console=ps4">Nest</a></li>
+            <li><a href="ConsoleList?maker=august&console=nintendo">August</a></li>
+        </ul>
+        <h2>Smart Doorlocks</h2>
+        <ul>
+            <li><a href="TabletList?maker=schlange&tablet=ipad">Schlange</a></li>
+            <li><a href="TabletList?maker=august&tablet=ipad3">August</a></li>
+            <li><a href="TabletList?maker=yale&tablet=Surface">Yale</a></li>
+        </ul>
+        <!-- Add other categories here -->
+        	
+		</li>
+		<li>
+			<h2>Smart Speakers</h2>
+			<ul>
+				<li id="first"><a href="GamesList?maker=amazon&game=g1">Amazon</a></li>
+				<li><a href="GamesList?maker=google&game=g2">Google</a></li>
+				<li><a href="GamesList?maker=apple&game=g3">Apple</a></li>
+			</ul>
+		</li>
+		<li>
+			<h2>Smart Lightings</h2>
+			<ul>
+				<li id="first"><a href="SmartLightingList?maker=philips&smartlighting=s1">Philips</a></li>
+				<li><a href="SmartLightingList?maker=lifx&smartlighting=s2">LIFX</a></li>
+				<li><a href="SmartLightingList?maker=tp-link&smartlighting=s3">TP-Link</a></li>
+			</ul>
+		</li>
+		<li>
+			<h2>Smart Thermostats</h2>
+			<ul>
+				<li id="first"><a href="SmartThermostatList?maker=nest&smartthermostat=st1">Nest</a></li>
+				<li><a href="SmartThermostatList?maker=ecobee&smartthermostat=st2">Ecobee</a></li>
+				<li><a href="SMartThermostatList?maker=honeywell&smartthermostat=st3">Honeywell</a></li>
+			</ul>
+		</li>
+		<li>
+			<h2>Accessories</h2>
+			<ul>
+				<li id="first"><a href="AccessoryList?maker=microsoft&console=xbox360">Microsoft Accessories</a></li>
+				<li><a href="AccessoryList?maker=sony&console=PS4">Sony Accessories</a></li>
+				<li><a href="AccessoryList?maker=nintendo&console=WII">Nintendo Accessories</a></li>
+			</ul>
+		</li>
+	</ul>
+    </div>
+
+    <!-- Main content -->
+    <div id="content">
+        <div class="post">
+            <h2 class="title">Welcome to Smart Home Devices</h2>
+            <div class="entry">
+                <img src="images/site//smarthome_main.jpg" alt="Smart Home Devices">
+                <h2>The world trusts us to deliver SPEEDY service for smart home enthusiasts</h2>
+                <h3>We beat our competitors in all aspects. Price-Match Guaranteed</h3>
+            </div>
+        </div>
+        <div class="post">
+            <h2 class="title">Best Sellers</h2>
+            <div id="bestseller">
+                <div id="shop_item">
+                    <h3>Smart Doorbell Pro</h3>
+                    <strong>$199.99</strong>
+                    <div id="item"><img src="images/consoles/xbox1.jpg" alt="Smart Doorbell Pro" /></div>
+                    <button class="btnbuy">Buy Now</button>
+                    <button class="btnreview">Write Review</button>
+                    <button class="btnreview">View Review</button>
+                </div>
+                <div id="shop_item">
+                    <h3>Smart Lock Plus</h3>
+                    <strong>$249.49</strong>
+                    <div id="item"><img src="images/consoles/xbox360.jpg" alt="Smart Lock Plus" /></div>
+                    <button class="btnbuy">Buy Now</button>
+                    <button class="btnreview">Write Review</button>
+                    <button class="btnreview">View Review</button>
+                </div>
+                <!-- Add more shop items as needed -->
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

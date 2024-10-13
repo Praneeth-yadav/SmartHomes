@@ -1,99 +1,140 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Smart Homes</title>
+<title>Smart Home</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
-<!-- Links for Jquery and bootstrap css -->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<script>
-<!-- jqurey script -->
-$(document).ready(function(){
-
-	$('#myCarousel').carousel({
-  interval: 3000
-})
-
-$('.carousel .item').each(function(){
-  var next = $(this).next();
-  if (!next.length) {
-    next = $(this).siblings(':first');
-  }
-  next.children(':first-child').clone().appendTo($(this));
-});
-});
-</script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="javascript.js"></script>
 <style>
-* {
-		box-sizing : unset;
-	}
-	
-.col-md-6{
-		width : 45% ! important;
-	}
-</style>	
-
-
-
+    body {
+        font-family: 'Georgia', 'Times New Roman', Times, serif;
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    #logo {
+        background-color: #2c3e50;
+        padding: 20px;
+        color: #ecf0f1;
+        align-content:space-evenly; 
+    }
+    #logo table {
+        float: left;
+    }
+    #logo h1 a {
+        color: #ecf0f1;
+        text-decoration: none;
+        font-size: 2em;
+    }
+    #logo p {
+        font-style: italic;
+        color: #bdc3c7;
+    }
+    #logo div[style*="float: right"] {
+        width: 30%;
+        margin-top: 20px;
+    }
+    #logo input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 16px;
+    }
+    #header {
+        background-color: #34495e;
+        padding: 10px 0;
+    }
+    #menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+    #menu ul li a {
+        color: #ecf0f1;
+        text-decoration: none;
+        padding: 10px 15px;
+        display: block;
+        transition: background-color 0.3s;
+    }
+    #menu ul li a:hover {
+        background-color: #2c3e50;
+    }
+    .col-md-6 {
+        width: 50%;
+        padding: 15px;
+    }
+    @media (max-width: 768px) {
+        #logo table, #logo div[style*="float: right"] {
+            float: none;
+            width: 100%;
+        }
+        #menu ul {
+            flex-direction: column;
+        }
+        .col-md-6 {
+            width: 100%;
+        }
+    }
+</style>
+<script>
+$(document).ready(function(){
+    $('#myCarousel').carousel({
+        interval: 3000
+    });
+    $('.carousel .item').each(function(){
+        var next = $(this).next();
+        if (!next.length) {
+            next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+    });
+});
+</script>
 </head>
-<body onload="init()" style='margin: 0px !important; padding: 0 !important;font-family: Georgia, "Times New Roman", Times, serif;	font-size: 12px !important;	'>
-	
-	<!-- Start #logo top content of the webpage-->
-	<div id="logo">
-		<table style="float: left">
-			<tr>
-				<td style="vertical-align: top;"><img src="images/site/smarthome_logo.jpg" alt=""
-					style="height: 80px" /></td>
-				<td><h1>
-						<a href="#">Smart Homes</a>
-					</h1></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><p>
-						<em>World's Largest Smart Home Collection</em>
-					</p></td>
-			</tr>
-		</table>
-		<div
-			style="float: right; width: 30%; margin-top: 35px; border: 1px solid white; padding: 5px; padding-right: 15px">
-			<em style="color: white;">Search Product:</em>
-			<div name="autofillform">
-				<input type="text" name="searchId" value="" class="input"
-					id="searchId" onkeyup="doCompletion()" 
-					placeholder="search here.." style="padding: 5px; font-size: 16px;" />
-				<div id="auto-row">
-					<table id="complete-table" class="gridtable"
-						style="position: absolute; width: 315px;"></table>
-				</div>
-			</div>
-		</div>
-
-	</div>
-	<hr />
-	<!-- end #logo -->
-	<!-- start #header -->
-	<!-- menu in header area the header div ends in utility file where header content right side link gets populated with login id cart and logout option -->
-	<div id="header">
-		<div id="menu">
-			<ul>
-				
-				<li><a href="Home" class="first"><span class="glyphicon glyphicon-home">Home</span></a></li>
-				<li><a href="ConsoleList"><span class="glyphicon">Doorbells</span></a></li>
-				<li><a href="GamesList"><span class="glyphicon">Doorlocks</span></a></li>
-				<li><a href="TabletList"><span class="glyphicon">Speakers</span></a></li>
-				<li><a href="LightningsList"><span class="glyphicon">Lightning</span></a></li>
-				<li><a href="ThermostatsList"><span class="glyphicon">Thermostat</span></a></li>
-				<li><a href="Trending"><span class="glyphicon">Trending </span></a></li>
-			</ul>
-		</div>	
-		<!-- end #menu -->
-		
-				
+<body onload="init()">
+    <div id="logo">
+        <table>
+            <tr>
+                <td><img src="images/site/smarthome_logo.jpg" alt="" style="height: 80px" /></td>
+                <td><h1><a href="#">Smart Home</a></h1></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><p><em>World's Largest Online Smart Home Devices Center</em></p></td>
+            </tr>
+        </table>
+        <div style="float: right; width: 30%; margin-top: 35px; padding: 5px; padding-right: 15px">
+            <em>Search Product:</em>
+            <div name="autofillform">
+                <input type="text" name="searchId" id="searchId" onkeyup="doCompletion()" 
+                    placeholder="Search here..." />
+                <div id="auto-row">
+                    <table id="complete-table" class="gridtable" style="position: absolute; width: 315px;"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="header">
+        <div id="menu">
+            <ul>    
+                <li><a href="Home" class="first"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="ConsoleList"><span class="glyphicon"></span> Smart Doorbells</a></li>
+                <li><a href="TabletList"><span class="glyphicon"></span> Smart Doorlocks</a></li>
+                <li><a href="GamesList"><span class="glyphicon"></span> Smart Speakers</a></li>
+                <li><a href="SmartLightingList"><span class="glyphicon"></span> Smart Lightings</a></li>
+                <li><a href="SmartThermostatList"><span class="glyphicon"></span> Smart Thermostats</a></li>
+                <li><a href="Trending"><span class="glyphicon"></span> Trending</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
