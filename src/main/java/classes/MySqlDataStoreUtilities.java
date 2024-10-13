@@ -16,7 +16,7 @@ public class MySqlDataStoreUtilities
 		try
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smarthomesdb?serverTimezone=UTC","root","Smallworld@9286");
+			conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/smarthomesdb?serverTimezone=UTC","root","Nithin@136");							
 			message="Successfull";
 			System.out.println("Success");
 			return message;
@@ -219,7 +219,7 @@ public class MySqlDataStoreUtilities
 			
 			String selectConsole="select * from  Productdetails where ProductType=?";
 			PreparedStatement pst = conn.prepareStatement(selectConsole);
-			pst.setString(1,"consoles");
+			pst.setString(1,"doorbells");
 			ResultSet rs = pst.executeQuery();
 			
 			while(rs.next())
@@ -267,7 +267,7 @@ public static HashMap<String,Tablet> getTablets()
 		
 		String selectTablet="select * from  Productdetails where ProductType=?";
 		PreparedStatement pst = conn.prepareStatement(selectTablet);
-		pst.setString(1,"tablets");
+		pst.setString(1,"speakers");
 		ResultSet rs = pst.executeQuery();
 		
 		while(rs.next())
@@ -294,7 +294,7 @@ public static HashMap<String,Game> getGames()
 		
 		String selectGame="select * from  Productdetails where ProductType=?";
 		PreparedStatement pst = conn.prepareStatement(selectGame);
-		pst.setString(1,"games");
+		pst.setString(1,"doorlocks");
 		ResultSet rs = pst.executeQuery();
 		
 		while(rs.next())
@@ -320,7 +320,7 @@ public static HashMap<String,Lightning> getLightnings()
 		
 		String selectLightning="select * from  Productdetails where ProductType=?";
 		PreparedStatement pst = conn.prepareStatement(selectLightning);
-		pst.setString(1,"lightnings");
+		pst.setString(1,"lights");
 		ResultSet rs = pst.executeQuery();
 		
 		while(rs.next())
@@ -346,7 +346,7 @@ public static HashMap<String,Thermostat> getThermostats()
 		
 		String selectThermostat="select * from  Productdetails where ProductType=?";
 		PreparedStatement pst = conn.prepareStatement(selectThermostat);
-		pst.setString(1,"thermostats");
+		pst.setString(1,"thermos");
 		ResultSet rs = pst.executeQuery();
 		
 		while(rs.next())

@@ -2,10 +2,10 @@
 <div id="content">
 	<div class="post">
 		<h2 class="title">
-			<a href="#">Welcome to Smart Home </a>
+			<a href="#">Welcome to GameSpeed </a>
 		</h2>
 		<div class="entry">
-			<img src="images/site/smarthome_main.jpg"
+			<img src="images/site//smarthome_main.jpg"
 				style="width: 600px; display: block; margin-left: auto; margin-right: auto" />
 			<br> <br>
 			<h2>The world trusts us to deliver SPEEDY service for video-gaming fans</h2>
@@ -22,10 +22,10 @@
 			<table id="bestseller">
 				<tr>
 					<td><div id="shop_item">
-							<h3>Wipro Light</h3>
+							<h3>XBox One</h3>
 							<strong>399.99$</strong>
 							<ul>
-								<li id="item"><img src="images/lightnings/wiprolight.jpeg" alt="" />
+								<li id="item"><img src="images/consoles/xbox1.jpg" alt="" />
 								</li>
 								<li>
 		<form action='Cart' method='post'><input type='submit' class="btnbuy" value='Buy Now'>
@@ -57,10 +57,10 @@
 						</div>
 					</td>
 					<td><div id="shop_item">
-							<h3>Elemake Doorlock</h3>
+							<h3>Xbox 360</h3>
 							<strong>349.49$</strong>
 							<ul>
-								<li id="item"><img src="images/games/elemakedoorlock.jpeg" alt="" />
+								<li id="item"><img src="images/consoles/xbox360.jpg" alt="" />
 								</li>
 								<li><form action='Cart' method='post'><input type='submit' class="btnbuy" value='Buy Now'>
 							<input type='hidden' name='name' value='xbox360'>
@@ -90,4 +90,141 @@
 		</div>
 	</div>
 </div>
+
+<style>
+
+#content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.post {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    padding: 20px;
+    overflow: hidden; /* Clear internal floats */
+}
+
+.post::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.title {
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.entry {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+#content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.post {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.title {
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.entry {
+    text-align: center;
+}
+
+.entry img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.entry h2 {
+    color: #34495e;
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.entry h1 {
+    color: #e74c3c;
+    font-size: 28px;
+    margin: 20px 0;
+}
+
+#bestseller {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 20px;
+}
+
+#shop_item {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+#shop_item h3 {
+    color: #2c3e50;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+#shop_item strong {
+    color: #e74c3c;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+#item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.btnbuy, .btnreview {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+
+.btnbuy:hover, .btnreview:hover {
+    background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+    #bestseller td {
+        display: block;
+        width: 100%;
+    }
+}
+</style>
 <!-- end #content -->
