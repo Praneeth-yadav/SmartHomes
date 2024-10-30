@@ -12,23 +12,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script>
-<!-- jqurey script -->
-$(document).ready(function(){
-
-	$('#myCarousel').carousel({
-  interval: 3000
-})
-
-$('.carousel .item').each(function(){
-  var next = $(this).next();
-  if (!next.length) {
-    next = $(this).siblings(':first');
-  }
-  next.children(':first-child').clone().appendTo($(this));
-});
-});
-</script>
+<script src="header.js"></script>
 <script type="text/javascript" src="javascript.js"></script>
 <style>
 * {
@@ -92,6 +76,13 @@ $('.carousel .item').each(function(){
 				<li><a href="LightningsList"><span class="glyphicon">Lightning</span></a></li>
 				<li><a href="ThermostatsList"><span class="glyphicon">Thermostat</span></a></li>
 				<li><a href="Trending"><span class="glyphicon">Trending </span></a></li>
+				 <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><span class="glyphicon">CustomerService</span> <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="open_ticket.html" style="color: black; flex:auto; ">Open a Ticket</a></li>
+                        <li><a href="checkTicketStatus.html" style="color: black; flex: auto;">Status of a Ticket</a></li>
+                    </ul>
+                </li> 
 			</ul>
 		</div>	
 		<!-- end #menu -->

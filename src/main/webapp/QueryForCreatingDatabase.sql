@@ -66,3 +66,9 @@ Create table Stores
     Primary key(storeId)
 );
 
+CREATE TABLE ticket (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ticket_number VARCHAR(255) NOT NULL,
+    status VARCHAR(255) NOT NULL
+);
+

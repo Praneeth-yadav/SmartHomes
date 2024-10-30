@@ -19,5 +19,8 @@
 	<classpathentry kind="lib" path="/Users/praneetheraganaboina/Downloads/jar_files/bson-record-codec-5.2.0.jar"/>
 	<classpathentry kind="lib" path="/Users/praneetheraganaboina/Downloads/jar_files/mongodb-driver-core-5.2.0.jar"/>
 	<classpathentry kind="lib" path="/Users/praneetheraganaboina/Downloads/jar_files/mongodb-driver-sync-5.2.0.jar"/>
+	<classpathentry kind="lib" path="/Users/praneetheraganaboina/Downloads/commons-fileupload-1.4.jar"/>
+	<classpathentry kind="lib" path="/Users/praneetheraganaboina/Downloads/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="/Users/praneetheraganaboina/Downloads/json-20210307.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

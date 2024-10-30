@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open a Ticket</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+    <style>
+        /* Main container styling */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column; /* Stacking items vertically */
+            align-items: center; /* Centering horizontally */
+            justify-content: center; /* Centering vertically */
+            min-height: calc(100vh - 50px); /* Adjust for header height */
+            padding: 20px;
+        }
+
+        /* Centering the form and title */
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #ticketForm {
+            width: 100%;
+            max-width: 500px; /* Sets a max width for a better look on larger screens */
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        #ticketNumber {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Style for header */
+        #header-placeholder {
+            margin-bottom: 20px; /* Space between header and form */
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="container">
+        <h2>Open a Ticket</h2>
+        <form id="ticketForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="productDescription">Describe the Issue with the Product/Shipment:</label>
+                <textarea class="form-control" id="productDescription" name="productDescription" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="productImage">Upload Image of Product/Shipment Box:</label>
+                <input type="file" class="form-control-file" id="productImage" name="productImage" accept="image/*" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit Ticket</button>
+        </form>
+        <p id="ticketNumber"></p>
+    </div>
+
+    <script>
+        // Load the header content
+        $(document).ready(function() {
+            $("#header-placeholder").load("Header.html");
+
+            // Form submission with AJAX
+            $("#ticketForm").on("submit", function(event) {
+                event.preventDefault();
+                const formData = new FormData(this);
+                const basePath = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, "");
+                const url = `${basePath}/FileUploadServlet`;
+                console.log("URL",url);
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        try {
+                        	console.log("response :",response);
+                            alert(response.statusMessage + "\nUpload successful! Your ticket number is: " + response.ticketNumber);
+                            window.location.href = "http://localhost:8080/pro1/";
+                        } catch (e) {
+                            console.error("Parsing error:", e);
+                            alert("Error parsing response from server.");
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error("Error:", textStatus, errorThrown);
+                        alert("There was an error submitting your ticket. Please try again.");
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

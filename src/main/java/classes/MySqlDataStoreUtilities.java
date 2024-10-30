@@ -845,4 +845,51 @@ return hm;
 }
 
 
+public static void insertTicket(String ticketNumber, String status) {
+    try {
+        getConnection();
+        String sql = "INSERT INTO ticket (ticket_number, status) VALUES (?, ?) " +
+                     "ON DUPLICATE KEY UPDATE status = ?";
+        PreparedStatement preparedStatement = conn.prepareStatement(sql);
+        preparedStatement.setString(1, ticketNumber);
+        preparedStatement.setString(2, status);
+        preparedStatement.setString(3, status); // Set the status for update
+        preparedStatement.executeUpdate(); 
+        System.out.println("Ticket inserted or updated successfully");
+    } catch (Exception e) {
+        System.out.println("Exception MySqlDataStoreUtilities insertTicket: " + e);
+    } finally {
+        // Make sure to close the connection if it was established
+        try {
+            if (conn != null && !conn.isClosed()) {
+                conn.close();
+            }
+        } catch (SQLException ex) {
+            System.out.println("Failed to close the connection: " + ex);
+        }
+    }	
+}
+
+public static String getDecisionForTicket(String ticketNumber) {
+    String decision = "No status found for this ticket number.";
+    
+    try {
+        getConnection();
+        String sql = "SELECT status FROM ticket WHERE ticket_number = ?";
+        try (PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+            preparedStatement.setString(1, ticketNumber);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            
+            if (resultSet.next()) {
+                decision = resultSet.getString("status"); // Get the status from the result
+            }
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+        decision = "Error retrieving status from database.";
+    }
+
+    return decision;
+}
+
 }	
