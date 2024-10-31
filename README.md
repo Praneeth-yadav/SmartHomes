@@ -1,6 +1,6 @@
 # Project Title
 
-A brief description of your project and its purpose.
+Inventory management project with open api integration for customer service.
 
 ## Table of Contents
 
