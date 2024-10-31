@@ -7,8 +7,6 @@ A brief description of your project and its purpose.
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
-- [Contact](#contact)
 
 ## Prerequisites
 
