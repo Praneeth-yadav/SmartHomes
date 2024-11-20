@@ -1,0 +1,71 @@
+curl --location --request PUT 'https://localhost:9200/search-reviews' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ApiKey TXBxVVBaTUJhbDRIbmw3enFNazc6dTdkNXV5aGhUbm14QmF1dmUtQ3lQUQ==' \
+--data '{
+    "settings": {
+    "index": {
+      "number_of_shards": 1,
+      "number_of_replicas": 1
+    }
+  },
+  "mappings": {
+  "properties": {
+    "embedding": {
+      "type": "dense_vector",
+      "dims": 512,
+      "similarity": "cosine",
+      "index": true
+    },
+    "reviewtext": {
+      "type": "text"
+    },
+    "productName": {
+      "type": "text"
+    },
+    "productPrice": {
+      "type": "text"
+    },
+    "ProductType": {
+      "type": "text"
+    }
+  
+}
+  }
+}'
+
+------------------------------------------------------
+
+curl --location --request PUT 'https://localhost:9200/search-products' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ApiKey TXBxVVBaTUJhbDRIbmw3enFNazc6dTdkNXV5aGhUbm14QmF1dmUtQ3lQUQ==' \
+--data '{
+    "settings": {
+    "index": {
+      "number_of_shards": 1,
+      "number_of_replicas": 1
+    }
+  },
+  "mappings": {
+  "properties": {
+    "embedding": {
+      "type": "dense_vector",
+      "dims": 512,
+      "similarity": "cosine",
+      "index": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "productName": {
+      "type": "text"
+    },
+    "productPrice": {
+      "type": "double"
+    },
+    "ProductType": {
+      "type": "text"
+    }
+  
+}
+  }
+}'

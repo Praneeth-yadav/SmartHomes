@@ -10,7 +10,7 @@ import java.util.Base64;
 
 public class GetImageDecision {
     private final static String apiUrl = "https://api.openai.com/v1/chat/completions"; // Adjust to the correct endpoint
-    private final static String apiKey = "API_KEY"; // Keep your API key secure
+    private final static String api = System.getenv("OPENAI_API_KEY"); 
 
     public static String getDecisionFromImage(String imagePath, String ticketDescription) {
         String decision = "Unknown"; // Default decision
@@ -23,7 +23,7 @@ public class GetImageDecision {
                         HttpURLConnection connection = (HttpURLConnection) new URL(apiUrl).openConnection();
             connection.setDoOutput(true);
             connection.setRequestMethod("POST");
-            connection.setRequestProperty("Authorization", "Bearer " + apiKey);
+            connection.setRequestProperty("Authorization", "Bearer " + api);
             connection.setRequestProperty("Content-Type", "application/json");
 
             JSONObject jsonRequest = new JSONObject();

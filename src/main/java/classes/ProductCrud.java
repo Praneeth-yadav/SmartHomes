@@ -2,6 +2,8 @@ package classes;
 import java.io.*;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +16,7 @@ import com.mongodb.util.JSON;
 @WebServlet("/ProductCrud")
 
 public class ProductCrud extends HttpServlet {
+	public String requestData="";
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 			response.setContentType("text/html");
@@ -22,27 +25,46 @@ public class ProductCrud extends HttpServlet {
 			String action = request.getParameter("button");
 			
 			String msg = "good";
-			String producttype= "",productId="",productName="",productImage="",productManufacturer="",productCondition="",prod = "",productOnSale = "";
+			String producttype= "",productId="",productName="",productImage="",productManufacturer="",productCondition="",prod = "",productOnSale = "",productDescription="";
 			double productPrice=0.0,productDiscount = 0.0;
 			int productQuantity = 0;
 			HashMap<String,Console> allconsoles = new HashMap<String,Console> ();
 			HashMap<String,Tablet> alltablets = new HashMap<String,Tablet> ();
 			HashMap<String,Game> allgames = new HashMap<String,Game> ();
 			HashMap<String,Accessory> allaccessories=new HashMap<String,Accessory>();
-			System.out.println("request"+"producttype ="+ request.getParameter("producttype")+"productId   = "+request.getParameter("productId")+"productName = "+request.getParameter("productName")+
-			 "productPrice = "+Double.parseDouble(request.getParameter("productPrice"))+
-			 "productImage = " +request.getParameter("productImage") +
-			 "productManufacturer = "+request.getParameter("productManufacturer")+
-			 "productCondition = "+request.getParameter("productCondition")+
-			 "productDiscount = "+Double.parseDouble(request.getParameter("productDiscount"))+
-			 "productOnSale = "+request.getParameter("productOnSale")+
-			 "productQuantity =" +Integer.parseInt(request.getParameter("productQuantity"))
-			 );
+//			System.out.println("request"+"producttype ="+ request.getParameter("producttype")+"productId   = "+request.getParameter("productId")+"productName = "+request.getParameter("productName")+
+//			 "productPrice = "+Double.parseDouble(request.getParameter("productPrice"))+
+//			 "productImage = " +request.getParameter("productImage") +
+//			 "productManufacturer = "+request.getParameter("productManufacturer")+
+//			 "productCondition = "+request.getParameter("productCondition")+
+//			 "productDiscount = "+Double.parseDouble(request.getParameter("productDiscount"))+
+//			 "productOnSale = "+request.getParameter("productOnSale")+
+//			 "productDescription = "+request.getParameter("productDescription")+
+//			 "productQuantity =" +Integer.parseInt(request.getParameter("productQuantity"))
+//			 );
+			 requestData=(String.format(
+				    "Product Details: " +
+				    "Type: %s ID: %s Name: %s Price: %.2f Image: %s Manufacturer: %s " +
+				    "Condition: %s Discount: %.2f On Sale: %s Description: %s Quantity: %d",
+				    request.getParameter("producttype"),
+				    request.getParameter("productId"),
+				    request.getParameter("productName"),
+				    Double.parseDouble(request.getParameter("productPrice")),
+				    request.getParameter("productImage"),
+				    request.getParameter("productManufacturer"),
+				    request.getParameter("productCondition"),
+				    Double.parseDouble(request.getParameter("productDiscount")),
+				    request.getParameter("productOnSale"),
+				    request.getParameter("productDescription"),
+				    Integer.parseInt(request.getParameter("productQuantity"))
+				));
+			 System.out.println("requestData"+requestData);
 			if (action.equalsIgnoreCase("add") || action.equalsIgnoreCase("update"))
 			{	
 				 producttype = request.getParameter("producttype");
 				 productId   = request.getParameter("productId");
 				 productName = request.getParameter("productName"); 
+				 productDescription = request.getParameter("productDescription");
 				 productPrice = Double.parseDouble(request.getParameter("productPrice"));
 				 productImage = request.getParameter("productImage");
 				 productManufacturer = request.getParameter("productManufacturer");
@@ -108,7 +130,12 @@ public class ProductCrud extends HttpServlet {
 			  {  
 				  try
 				  {
-					  msg = MySqlDataStoreUtilities.addproducts(producttype,productId,productName,productPrice,productImage,productManufacturer,productCondition,productDiscount,productOnSale,productQuantity,prod);
+					  msg = MySqlDataStoreUtilities.addproducts(producttype,productId,productName,productPrice,productImage,productManufacturer,productCondition,productDiscount,productOnSale,productQuantity,productDescription,prod);
+						List<Double> output=Utils.getEmbeddingsForProduct(productDescription);
+						System.out.println("output : "+output);
+
+						String docID=ElasticSearchUtils.storeEmbeddingInElasticsearch(productDescription,productName,productPrice,producttype, output);
+						System.out.println("docID : "+docID);
 				  }
 				  catch(Exception e)
 				  { 
@@ -151,7 +178,7 @@ public class ProductCrud extends HttpServlet {
 				
 				  try
 				  {
-					msg = MySqlDataStoreUtilities.updateproducts(producttype,productId,productName,productPrice,productImage,productManufacturer,productCondition,productDiscount,productOnSale,productQuantity);
+					msg = MySqlDataStoreUtilities.updateproducts(producttype,productId,productName,productPrice,productImage,productManufacturer,productCondition,productDiscount,productOnSale,productQuantity,productDescription);
 				  }
 				  catch(Exception e)
 				  { 

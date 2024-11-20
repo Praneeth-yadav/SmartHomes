@@ -37,6 +37,7 @@ public class WriteReview extends HttpServlet {
 			response.sendRedirect("Login");
 			return;
 		}
+		System.out.println("request : "+request);
                 String productname=request.getParameter("name");		
                 String producttype=request.getParameter("type");
                 String productmaker=request.getParameter("maker");

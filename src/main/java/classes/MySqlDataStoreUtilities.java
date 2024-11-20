@@ -455,14 +455,14 @@ public static void Insertstores(){
 		}
 	}
 
-public static String addproducts(String producttype,String productId,String productName,double productPrice,String productImage,String productManufacturer,String productCondition,double productDiscount,String productOnSale,int productQuantity,String prod)
+public static String addproducts(String producttype,String productId,String productName,double productPrice,String productImage,String productManufacturer,String productCondition,double productDiscount,String productOnSale,int productQuantity,String productDescription,String prod)
 {
 	String msg = "Product is added successfully";
 	try{
 		
 		getConnection();
-		String addProductQurey = "INSERT INTO  Productdetails(ProductType,Id,productName,productPrice,productImage,productManufacturer,productCondition,productDiscount,productOnSale,productQuantity)" +
-		"VALUES (?,?,?,?,?,?,?,?,?,?);";
+		String addProductQurey = "INSERT INTO  Productdetails(ProductType,Id,productName,productPrice,productImage,productManufacturer,productCondition,productDiscount,productOnSale,productQuantity,productDescription)" +
+		"VALUES (?,?,?,?,?,?,?,?,?,?,? );";
 		
 		String name = producttype;
 		
@@ -477,7 +477,8 @@ public static String addproducts(String producttype,String productId,String prod
 		pst.setDouble(8,productDiscount);
 		pst.setString(9,productOnSale);
 		pst.setInt(10,productQuantity);
-		
+		pst.setString(11,productDescription);
+
 		pst.executeUpdate();
 		try{
 			if (!prod.isEmpty())
@@ -498,9 +499,8 @@ public static String addproducts(String producttype,String productId,String prod
 			e.printStackTrace();
 			
 		}
-		
-		
-		
+
+
 	}
 	catch(Exception e)
 	{
@@ -512,13 +512,13 @@ public static String addproducts(String producttype,String productId,String prod
 	}
 	return msg;
 }
-public static String updateproducts(String producttype,String productId,String productName,double productPrice,String productImage,String productManufacturer,String productCondition,double productDiscount,String productOnSale, int productQuantity)
+public static String updateproducts(String producttype,String productId,String productName,double productPrice,String productImage,String productManufacturer,String productCondition,double productDiscount,String productOnSale, int productQuantity,String productDescription)
 { 
 	String msg = "Product is updated successfully";
 	try{
 		
 		getConnection();
-		String updateProductQurey = "UPDATE Productdetails SET productName=?,productPrice=?,productImage=?,productManufacturer=?,productCondition=?,productDiscount=?,productOnSale=?,productQuantity=? where Id =?;" ;
+		String updateProductQurey = "UPDATE Productdetails SET productName=?,productPrice=?,productImage=?,productManufacturer=?,productCondition=?,productDiscount=?,productOnSale=?,productQuantity=?,productDescription=? where Id =?;" ;
 		
 		
 		
@@ -532,7 +532,8 @@ public static String updateproducts(String producttype,String productId,String p
 		pst.setDouble(6,productDiscount);
 		pst.setString(7,productOnSale);
 		pst.setInt(8,productQuantity);
-		pst.setString(9,productId);
+		pst.setString(8,productDescription);
+		pst.setString(10,productId);
 		pst.executeUpdate();
 		
 		

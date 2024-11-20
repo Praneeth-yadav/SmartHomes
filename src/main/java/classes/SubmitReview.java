@@ -2,6 +2,7 @@ package classes;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -54,7 +55,11 @@ public class SubmitReview extends HttpServlet {
 
 
 		String message=utility.storeReview(productname,producttype,productprice,productmaker,reviewrating,storeid,storecity,storestate,storezip,productsale,rebate,userid,age,gender,occupation,reviewdate,reviewtext);
+		List<Double> output=Utils.getEmbeddingsForProduct(reviewtext);
+		System.out.println("output : "+output);
 
+		String docID=ElasticSearchUtils.storeEmbeddingInElasticsearchForReviews(reviewtext,productname,productprice,producttype,output);
+		System.out.println("docID : "+docID);
 		utility.printHtml("Header.html");
 		utility.printHtml("LeftNavigationBar.html");
 		pw.print("<form name ='Cart' action='CheckOut' method='post'>");
