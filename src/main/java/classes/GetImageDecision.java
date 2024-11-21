@@ -10,7 +10,7 @@ import java.util.Base64;
 
 public class GetImageDecision {
     private final static String apiUrl = "https://api.openai.com/v1/chat/completions"; // Adjust to the correct endpoint
-    private final static String api = System.getenv("OPENAI_API_KEY"); 
+    private final static String api = "Key";
 
     public static String getDecisionFromImage(String imagePath, String ticketDescription) {
         String decision = "Unknown"; // Default decision

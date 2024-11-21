@@ -38,7 +38,7 @@ import java.util.UUID;
 
 public class ElasticSearchUtils {
 
-    private static final String API_KEY = "apiKEy";
+    private static final String API_KEY = "APIKEY";
 
 
 
@@ -52,7 +52,7 @@ public class ElasticSearchUtils {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        System.out.println("Input to storeEmbeddingInElasticsearch requestData: " + productDescription + " embeddings: " + embeddings);
+//        System.out.println("Input to storeEmbeddingInElasticsearch requestData: " + productDescription + " embeddings: " + embeddings);
 
         // Elasticsearch URL
         String urlString = "https://localhost:9200/search-products/_doc?pipeline=ent-search-generic-ingestion";
@@ -79,7 +79,7 @@ public class ElasticSearchUtils {
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setRequestProperty("Authorization", "ApiKey " + API_KEY);
         connection.setDoOutput(true);  // Enable output stream for the request body
-        System.out.println("Request Payload: " + jsonPayload);
+//        System.out.println("Request Payload: " + jsonPayload);
 
         // Write the JSON payload to the output stream
         try (OutputStream os = connection.getOutputStream()) {
@@ -108,7 +108,7 @@ public class ElasticSearchUtils {
                 documentId = extractDocumentIdFromResponse(responseString);
                 version = extractVersionFromResponse(responseString);
 
-                System.out.println("Embedding stored with ID: " + documentId + " and version: " + version);
+                System.out.println("Embedding stored with ID: " + documentId + " and version: " + version+ "ProductType :"+ProductType);
             }
         } else {
             System.out.println("Failed to index document");
@@ -241,18 +241,25 @@ public class ElasticSearchUtils {
                         String description = source.get("description").getAsString();
 
                         // Create a recommendation string
-                        String recommendation = String.format("Product: %s\n  Price:$ %.2f\n  Type: %s\n  Description: %s\n", 
-                                                              productName, productPrice, productType, description);
-
+//                        String recommendation = String.format("Product: %s\n  Price:$ %.2f\n  Type: %s\n  Description: %s\n", 
+//                                                              productName, productPrice, productType, description);
+                        String recommendation = String.format(
+                                "<div class='product-card'>" +
+                                "   <h3 class='product-name'>%s</h3>" +
+                                "   <p class='product-price'><strong>Price: </strong><span class='price'>$%.2f</span></p>" +
+                                "   <p class='product-type'><strong>Type: </strong><strong>%s</strong></p>" +
+                                "   <p class='product-description'><strong>Description:</strong> <em>%s</em></p>" +
+                                "</div>", 
+                                productName, productPrice, productType, description);
                         // Add to recommendations list
                         recommendations.add(recommendation);
                     }
 
                     // Print the recommendations
-                    System.out.println("Recommendations:");
-                    for (String rec : recommendations) {
-                        System.out.println(rec);
-                    }
+//                    System.out.println("Recommendations:");
+//                    for (String rec : recommendations) {
+//                        System.out.println(rec);
+//                    }
                 }
             } else {
                 System.out.println("Request failed. HTTP Response Code: " + responseCode);

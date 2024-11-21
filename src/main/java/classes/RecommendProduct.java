@@ -40,9 +40,12 @@ public class RecommendProduct extends HttpServlet {
 
         pw.print("</div></div></div>");
         utility.printHtml("Footer.html");
+//        Utils.add10ProductsAndReviews();
     }
 
-    @Override
+   
+
+	@Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter pw = response.getWriter();
